@@ -3,7 +3,8 @@
 ##### - [Background and Research Questions](#background-and-research-questions)
 ##### - [Statement of Business Task](#statement-of-business-task)
 ##### - [Description of Data Sources](#description-of-data-sources)
-
+##### - [Data ETL and Analyses](#data-etl-and-analyses)
+##### - [Conclusions and Insights](#conclusions-and-insights)
 ##### - [References](#references)
 ---
 ### Background and Research Questions:
@@ -28,6 +29,115 @@ A critical part of the healthcare sector is the link between the services render
      - *Tot_Dschrgs*: The number of discharges billed by all providers for inpatient hospital services.  
      - *Avg_Tot_Pymt_Amt*: The average total payments to all providers for the DRG including the MS-DRG amount, teaching, disproportionate share, capital, and            outlier payments for all cases. Also included in average total payments are co-payment and deductible amounts that the patient is responsible for and              any additional payments by third parties for coordination of benefits.  
      - *Avg_Mdcr_Pymt_Amt*: The average amount that Medicare pays to the provider for Medicare's share of the MS-DRG. Medicare payment amounts include the MS-            DRG amount, teaching, disproportionate share, capital, and outlier payments for all cases. Medicare payments DO NOT include beneficiary co- payments              and deductible amounts nor any additional payments from third parties for coordination of benefits.  
+
+Additionally, a simple metric called *"Prct_Mdcr_Covered" (Percent of Medicare Covered)* was calculated to determine what proportion of the average total payment was payed out by Medicare to the provider (i.e., "Prct_Mdcr_Covered" = "Avg_Mdcr_Pymt_Amt"] / ["Avg_Tot_Pymt_Amt"]) * 100).
+
+### Data ETL and Analyses
+Each year's data were locally downloaded and extracted into their component .csv files. This first step is a merge using the pandas library in Python. This step also includes some transformations of fields into workable formats, and a simple summary of the merged dataset (which gets saved locally as "merged_data.csv").
+
+```python
+# Import the pandas library
+import pandas as pd
+
+# Define the path to the folder containing the CSV files
+path = ".../Medicare_Inpatient_Hospital_by_Provider_and_Service_2017-2021"
+
+# Create a list of the CSV files
+csv_files = [
+    "Medicare_Inpatient_Hospital_by_Provider_and_Service_2017.csv",
+    "Medicare_Inpatient_Hospital_by_Provider_and_Service_2018.csv",
+    "Medicare_Inpatient_Hospital_by_Provider_and_Service_2019.csv",
+    "Medicare_Inpatient_Hospital_by_Provider_and_Service_2020.csv",
+    "Medicare_Inpatient_Hospital_by_Provider_and_Service_2021.csv"
+]
+
+# Create a list of dataframes, one for each CSV file
+dfs = []
+for csv_file in csv_files:
+    df = pd.read_csv(path + "/" + csv_file, encoding="cp1252")
+    df["Year"] = csv_file.split("_")[-1].split(".csv")[0]
+    dfs.append(df)
+    
+# Merge the dataframes into one dataframe
+merged_df = pd.concat(dfs, ignore_index=True)
+
+# Convert the strings to floats
+merged_df["Avg_Tot_Pymt_Amt"] = merged_df["Avg_Tot_Pymt_Amt"].str.replace("$", "").str.replace(",", "").astype(float)
+merged_df["Avg_Mdcr_Pymt_Amt"] = merged_df["Avg_Mdcr_Pymt_Amt"].str.replace("$", "").str.replace(",", "").astype(float)
+
+# Convert the "Tot_Dschrgs" column to a number
+merged_df["Tot_Dschrgs"] = merged_df["Tot_Dschrgs"].str.replace("$", "").str.replace(",", "").astype(float)
+
+# Calculate the percentage of Medicare payments that are covered by Medicare
+merged_df["Prct_Mdcr_Covered"] = (merged_df["Avg_Mdcr_Pymt_Amt"] / merged_df["Avg_Tot_Pymt_Amt"]) * 100
+
+# Save the merged dataframe to a CSV file
+merged_df.to_csv("merged_data.csv", index=False)
+
+# Get a summary of the columns and data types
+merged_df.info()
+```
+This returns the following:
+```
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 886238 entries, 0 to 886237
+Data columns (total 17 columns):
+ #   Column                     Non-Null Count   Dtype  
+---  ------                     --------------   -----  
+ 0   ï»¿Rndrng_Prvdr_CCN        886238 non-null  int64  
+ 1   Rndrng_Prvdr_Org_Name      886238 non-null  object 
+ 2   Rndrng_Prvdr_City          886238 non-null  object 
+ 3   Rndrng_Prvdr_St            886238 non-null  object 
+ 4   Rndrng_Prvdr_State_FIPS    886238 non-null  int64  
+ 5   Rndrng_Prvdr_Zip5          886238 non-null  int64  
+ 6   Rndrng_Prvdr_State_Abrvtn  886238 non-null  object 
+ 7   Rndrng_Prvdr_RUCA          886202 non-null  float64
+ 8   Rndrng_Prvdr_RUCA_Desc     886202 non-null  object 
+ 9   DRG_Cd                     886238 non-null  int64  
+ 10  DRG_Desc                   886238 non-null  object 
+ 11  Tot_Dschrgs                886238 non-null  float64
+ 12  Avg_Submtd_Cvrd_Chrg       886238 non-null  object 
+ 13  Avg_Tot_Pymt_Amt           886238 non-null  float64
+ 14  Avg_Mdcr_Pymt_Amt          886238 non-null  float64
+ 15  Year                       886238 non-null  object 
+ 16  Prct_Mdcr_Covered          886238 non-null  float64
+dtypes: float64(5), int64(4), object(8)
+memory usage: 114.9+ MB
+```  
+Although all 15 original fields remain in the dataset, the following analyses pertain only to the ones of interest mentioned above along with the Percent Medicare Covered metric.
+
+- Initial Summary Year by Total Number of Discharges, Average Total Payment Amount, Average Medicare Payment Amount, and Percent Medicare Covered:
+
+```python
+# Group the dataframe by year
+grouped_df = merged_df.groupby("Year")
+
+# Calculate the summary statistics by Year, summing Total Discharges and getting averages for the other quantitative fields
+summary_df = grouped_df.agg({
+    "Tot_Dschrgs": "sum",
+    "Avg_Tot_Pymt_Amt": "mean",
+    "Avg_Mdcr_Pymt_Amt": "mean",
+    "Prct_Mdcr_Covered": "mean"
+})
+
+# Format the "Tot_Dschrgs" column in millions
+summary_df["Tot_Dschrgs"] = summary_df["Tot_Dschrgs"].astype(float).map("{:,}".format)
+
+# Print the summary statistics
+summary_df
+```
+Which results in the following table:
+```
+	Tot_Dschrgs	Avg_Tot_Pymt_Amt	Avg_Mdcr_Pymt_Amt	Prct_Mdcr_Covered
+Year				
+2017	7,398,125.0	14119.214949	11915.514418	82.111655
+2018	7,193,078.0	14736.667052	12393.452800	82.076662
+2019	6,964,500.0	15448.778842	12986.530717	82.131807
+2020	5,608,636.0	17063.097069	14405.848481	82.455151
+2021	5,252,878.0	18182.927676	15282.824890	82.089829
+```
+
+
 ---
 ### References 
 [^1]: Blendon, R. J., Brodie, M., Benson, J. M., Altman, D. E., & Buhr, T. (2006). Americans' views of health care costs, access, and quality. The Milbank quarterly, 84(4), 623–657. https://doi.org/10.1111/j.1468-0009.2006.00463.x
