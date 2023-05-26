@@ -4,7 +4,7 @@
 ##### - [Statement of Business Task](#statement-of-business-task)
 ##### - [Description of Data Sources](#description-of-data-sources)
 
-#### - [References](#references)
+##### - [References](#references)
 ---
 ### Background and Research Questions:
 A critical part of the healthcare sector is the link between the services rendered by providers and hospitals, and how those costs are passed down to insurance companies and the government (in the case of Medicare and Medicaid as examples). This is a particularly important area of research because Medicare costs have been rising and public opinion leans in the direction of more coverage, though how most understand where costs come from is complex and sometimes conflicting.[^1]
