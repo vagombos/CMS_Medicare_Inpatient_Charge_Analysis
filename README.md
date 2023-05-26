@@ -126,16 +126,10 @@ summary_df["Tot_Dschrgs"] = summary_df["Tot_Dschrgs"].astype(float).map("{:,}".f
 # Print the summary statistics
 summary_df
 ```
-Which results in the following table:
-```
-	Tot_Dschrgs	Avg_Tot_Pymt_Amt	Avg_Mdcr_Pymt_Amt	Prct_Mdcr_Covered
-Year				
-2017	7,398,125.0	14119.214949	11915.514418	82.111655
-2018	7,193,078.0	14736.667052	12393.452800	82.076662
-2019	6,964,500.0	15448.778842	12986.530717	82.131807
-2020	5,608,636.0	17063.097069	14405.848481	82.455151
-2021	5,252,878.0	18182.927676	15282.824890	82.089829
-```
+Which results in the following table:  
+![SummaryTable1](Images/SummaryTable1.PNG)  
+
+
 
 
 ---
