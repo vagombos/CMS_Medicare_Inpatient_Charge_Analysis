@@ -22,7 +22,12 @@ A critical part of the healthcare sector is the link between the services render
 
 ### Description of Data Sources:
 - The open source [CMS (Centers for Medicare and Medicaid Services) Inpatient data](https://data.cms.gov/provider-summary-by-type-of-service/medicare-inpatient-hospitals/medicare-inpatient-hospitals-by-provider) provides information on hospital discharges from Original Medicare (fee-for-service) Part A (Hospital Insurance) beneficiaries by Inpatient Prospective Payment System (IPPS) hospitals. It includes information on the use, payment, and hospital charges for more than 3,000 U.S. hospitals that received IPPS payments. The Medicare Inpatient Hospitals - by Provider and Service datasets, from 2017-2021, were individually downloaded for each year.
-- The CMS provides a [data dictionary](Data/MUP_INP_RY23_20230426_DD_PrvSrvc_508.pdf) of the 15 fields that are tracked in this Medicare Inpatient Hospitals - by Provider and Service dataset.
+- The CMS provides a [data dictionary](Data/MUP_INP_RY23_20230426_DD_PrvSrvc_508.pdf) of the 15 fields that are tracked in this Medicare Inpatient Hospitals - by Provider and Service dataset. Following the aforementioned factors to focus on, there are the following fields that were selected for the current analysis:  
+    - *Rndrng_Prvdr_Org_Name*: The name of the provider.  
+    - *DRG_Desc*: Description of the classification system (DRG) that groups similar clinical conditions (diagnoses) and the procedures furnished by the                  hospital during the stay.  
+     - *Tot_Dschrgs*: The number of discharges billed by all providers for inpatient hospital services.  
+     - *Avg_Tot_Pymt_Amt*: The average total payments to all providers for the DRG including the MS-DRG amount, teaching, disproportionate share, capital, and            outlier payments for all cases. Also included in average total payments are co-payment and deductible amounts that the patient is responsible for and              any additional payments by third parties for coordination of benefits.  
+     - *Avg_Mdcr_Pymt_Amt*: The average amount that Medicare pays to the provider for Medicare's share of the MS-DRG. Medicare payment amounts include the MS-            DRG amount, teaching, disproportionate share, capital, and outlier payments for all cases. Medicare payments DO NOT include beneficiary co- payments              and deductible amounts nor any additional payments from third parties for coordination of benefits.  
 ---
 ### References 
 [^1]: Blendon, R. J., Brodie, M., Benson, J. M., Altman, D. E., & Buhr, T. (2006). Americans' views of health care costs, access, and quality. The Milbank quarterly, 84(4), 623–657. https://doi.org/10.1111/j.1468-0009.2006.00463.x
