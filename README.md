@@ -33,7 +33,7 @@ A critical part of the healthcare sector is the link between the services render
 Additionally, a simple metric called *"Prct_Mdcr_Covered" (Percent of Medicare Covered)* was calculated to determine what proportion of the average total payment was payed out by Medicare to the provider (i.e., "Prct_Mdcr_Covered" = "Avg_Mdcr_Pymt_Amt"] / ["Avg_Tot_Pymt_Amt"]) * 100).
 
 ### Data ETL and Analyses
-Each year's data were locally downloaded and extracted into their component .csv files. This first step is a merge using the pandas library in Python. This step also includes some transformations of fields into workable formats, and a simple summary of the merged dataset (which gets saved locally as "merged_data.csv").
+Each [year's data were locally downloaded](Data/Medicare_Inpatient_Hospital_by_Provider_and_Service_datasets(2017-2021)) and extracted into their component .csv files. The first step is a merge using the pandas library in Python. This step also includes some transformations of fields into workable formats, calcuation of the Percent Medicare Covered metric, and a simple summary of the merged dataset (which gets saved locally as "merged_data.csv").
 
 ```python
 # Import the pandas library
