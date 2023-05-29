@@ -202,7 +202,9 @@ summary_df = summary_df.sort_values("Avg_Tot_Pymt_Amt", ascending=False)
 summary_df
 ```  
 Which returns the following table:  
-![DRG_Desc_by_TotDischarges_and_Tot_Pym](Images/DRG_Desc_by_TotDischarges_and_Tot_Pymt.PNG)  
+![DRG_Desc_by_TotDischarges_and_Tot_Pym](Images/DRG_Desc_by_TotDischarges_and_Tot_Pymt.PNG)   
+
+Perhaps most notable from this distribution of Diagnosis Related Groups is that the frequency (measured by Total Discharges) is quite variable across DRGs. And while the table is sorted to show the top 5 and bottom 5 according to Average Total Payment, there is a mix of more common diagnoses and less frequent ones in the top and bottom groups. The highest average total payment is associated with "EXTENSIVE BURNS OR FULL THICKNESS BURNS WITH MV >96 HOURS WITH SKIN GRAFT", but has a relatively low frequency based on Discharges (11); besides the "UNGROUPABLE" category, most lower payment diagnosis related groups are reletively infrequent except for "CARDIAC ARRHYTHMIA AND CONDUCTION DISORDERS WITHOUT CC/MCC" which has high number of discharges (>216,000).  
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
