@@ -8,13 +8,13 @@
 ##### - [Conclusions and Insights](#conclusions-and-insights)
 ##### - [References](#references)
 ---
-<a id="background-and-research-questions"></a>
 ### Background and Research Questions:  
 A critical part of the healthcare sector is the link between the services rendered by providers and hospitals, and how those costs are passed down to insurance companies and the government (in the case of Medicare and Medicaid as examples). This is a particularly important area of research because Medicare costs have been rising and public opinion leans in the direction of more coverage, though how most understand where costs come from is complex and sometimes conflicting.[^1]
 - The Research Questions are: 
     - **What factors captured in the data may account for higher payments?**
     - **What factors may account for more (or less) Medicare coverage for payments?**
     - **What payments/coverage can we predict for the next year (i.e., 2022, as the data's timeframe is 2017-2021)?**  
+
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
 ### Statement of Business Task:  
@@ -23,6 +23,7 @@ A critical part of the healthcare sector is the link between the services render
 1. The **type of diagnosis/condition of patients** is a driver for medical costs--especially chronic ones.[^2]
 2. The **number of discharges or volume of services** by providers is related to medical costs. [^3]
 3. The **types of providers/hospitals** have a relationship to Medicare costs.[^4],[^5]  
+
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
 ### Description of Data Sources:
@@ -35,6 +36,7 @@ A critical part of the healthcare sector is the link between the services render
      - *Avg_Mdcr_Pymt_Amt*: The average amount that Medicare pays to the provider for Medicare's share of the MS-DRG. Medicare payment amounts include the MS-            DRG amount, teaching, disproportionate share, capital, and outlier payments for all cases. Medicare payments DO NOT include beneficiary co- payments              and deductible amounts nor any additional payments from third parties for coordination of benefits.  
 
 Additionally, a simple metric called *"Prct_Mdcr_Covered" (Percent of Medicare Covered)* was calculated to determine what proportion of the average total payment was payed out by Medicare to the provider (i.e., "Prct_Mdcr_Covered" = "Avg_Mdcr_Pymt_Amt"] / ["Avg_Tot_Pymt_Amt"]) * 100).  
+
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
 ### Data ETL and Analyses
@@ -133,6 +135,7 @@ summary_df
 ```
 Which results in the following table:  
 ![SummaryTable1](Images/SummaryTable1.PNG)  
+
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
 
