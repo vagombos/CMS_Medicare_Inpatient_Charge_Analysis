@@ -135,9 +135,74 @@ summary_df
 ```
 Which results in the following table:  
 ![SummaryTable1](Images/SummaryTable1.PNG)  
+These relationships may be better understood in yearly trends. The code to create a line graph with total number of discharges is as follows:
+```python
+import matplotlib.pyplot as plt
 
+# Define the years
+years = [2017, 2018, 2019, 2020, 2021]
+
+# Calculate the total number of discharges for each year
+discharges_by_year = merged_df.groupby('Year')['Tot_Dschrgs'].sum() / 1000000  # Convert to millions
+
+# Create the line graph
+plt.figure(figsize=(10, 6))
+plt.plot(years, discharges_by_year, marker='s')  # Use 'marker' argument to display square points
+plt.xlabel('Year')
+plt.ylabel('Total Discharges (Millions)')
+plt.title('Yearly Trend in Total Discharges')
+plt.xticks(years)
+plt.ylim(0, 7.5)  # Set the y-axis limits
+plt.tight_layout()
+
+# Save the line graph as a .png image
+plt.savefig('line_graph_discharges.png', dpi=300)
+
+# Show the line graph
+plt.show()
+```  
 Graphed out, there appears to be a decreasing trend in the total number of discharges between 2017 and 2021:  
-![line_graph_discharges](Images/line_graph_discharges.PNG)  
+![line_graph_discharges](Images/line_graph_discharges.png)  
+The code for showing the Average Total Amount and Average Medicare Amount:
+```python
+import matplotlib.pyplot as plt
+
+# Define the years
+years = [2017, 2018, 2019, 2020, 2021]
+
+# Calculate the total number of discharges for each year
+discharges_by_year = merged_df[merged_df['DRG_Desc'].isin(bottom_5_drg)].groupby('Year')['Tot_Dschrgs'].sum()
+
+# Create the bar graph
+plt.figure(figsize=(10, 6))
+plt.bar(years, discharges_by_year)
+plt.xlabel('Year')
+plt.ylabel('Total Discharges')
+plt.title('Yearly Trend in Total Discharges for Bottom 5 DRG_Descs')
+plt.xticks(years)
+plt.tight_layout()
+
+# Show the bar graph
+plt.show()
+```  
+And while the total number of discharges appears to be going down over the years, the Average Amount (Total and Medicare) have been steadily increasing: ![line_graph_payment_amounts](Images/line_graph_payment_amounts.png)  
+
+To address what factors may play a role in Discharges and Average Total Amount, it's worth looking at Diagnosis Related Group (DRG_Desc) and Provider (Rndrng_Prvdr_Org_Name). Due to the large number of both categories, let's look at the Top and Bottom 5 across all years in a simple summary table, sorted by Average Total Amount. Here is the code used:  
+```python
+# Get a summary of Avg_Tot_Pymt_Amt and Avg_Mdcr_Pymt_Amt by the DRG_Desc
+summary_df = merged_df.groupby("DRG_Desc").agg({
+    "Tot_Dschrgs": "sum",
+    "Avg_Tot_Pymt_Amt": "mean"
+})
+
+# Sort the table in descending order by the Avg_Tot_Pymt_Amt
+summary_df = summary_df.sort_values("Avg_Tot_Pymt_Amt", ascending=False)
+
+# Print the summary statistics
+summary_df
+```  
+Which returns the following table:  
+![DRG_Desc_by_TotDischarges_and_Tot_Pym](Images/DRG_Desc_by_TotDischarges_and_Tot_Pymt.PNG)  
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
