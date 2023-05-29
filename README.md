@@ -206,6 +206,42 @@ Which returns the following table:
 
 Perhaps most notable from this distribution of Diagnosis Related Groups is that the frequency (measured by Total Discharges) is quite variable across DRGs. And while the table is sorted to show the top 5 and bottom 5 according to Average Total Payment, there is a mix of more common diagnoses and less frequent ones in the top and bottom groups. The highest average total payment is associated with "EXTENSIVE BURNS OR FULL THICKNESS BURNS WITH MV >96 HOURS WITH SKIN GRAFT", but has a relatively low frequency based on Discharges (11); besides the "UNGROUPABLE" category, most lower payment diagnosis related groups are reletively infrequent except for "CARDIAC ARRHYTHMIA AND CONDUCTION DISORDERS WITHOUT CC/MCC" which has high number of discharges (>216,000).  
 
+What providers are associated with the highest and lowest average total payment amounts? The following code was used to provide a top/bottom 5 providers by Average total Payment:
+```python
+# Group by provider name and calculate the average total payment
+avg_payments_by_provider = merged_df.groupby('Rndrng_Prvdr_Org_Name')['Avg_Tot_Pymt_Amt'].mean()
+
+# Create a new DataFrame with provider name and average total payment
+table_data = pd.DataFrame({
+    'Provider Name': avg_payments_by_provider.index,
+    'Average Total Payment': avg_payments_by_provider
+})
+
+# Sort the table by average total payment in descending order
+table_data = table_data.sort_values('Average Total Payment', ascending=False)
+
+# Display the table
+print(table_data)
+```  
+Wise Health and Harris Health Systems were associated with the highest Average Total Payments, while Wilmington Treatment Center and Black River Community Medical Center were at the bottom:  
+```
+                                         Average Total Payment  
+Rndrng_Prvdr_Org_Name                                           
+Wise Health System                                78407.810000  
+Harris Health System                              75698.375888  
+Us Pain & Spine Hospital                          65318.810000  
+Cooper County Community Hospital                  57158.526667  
+Woodhull Medical & Mental Health Center           55768.831000  
+...                                                        ...  
+Beacham Memorial Hospital                          4641.621818  
+Aspire Behavioral Health Of Conroe, Llc            4622.500000  
+Rmc Jacksonville                                   4610.732000  
+Black River Community Medical Center               4439.520909  
+Wilmington Treatment Center                        4089.928000  
+```  
+
+
+
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
 
