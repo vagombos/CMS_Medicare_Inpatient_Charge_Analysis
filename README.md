@@ -136,8 +136,8 @@ summary_df
 Which results in the following table:  
 ![SummaryTable1](Images/SummaryTable1.PNG)  
 
-Graphed out, there appears to be a decreasing trend in the total number of discharges between 2017 and 2021:
-![line_graph_discharges](Images/line_graph_discharges.PNG)
+Graphed out, there appears to be a decreasing trend in the total number of discharges between 2017 and 2021:  
+![line_graph_discharges](Images/line_graph_discharges.PNG)  
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
