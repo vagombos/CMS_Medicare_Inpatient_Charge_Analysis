@@ -40,7 +40,7 @@ Additionally, a simple metric called *"Prct_Mdcr_Covered" (Percent of Medicare C
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
 ### Data ETL and Analyses
-Each [year's data were locally downloaded](Data/Medicare_Inpatient_Hospital_by_Provider_and_Service_datasets(2017-2021)) and extracted into their component .csv files. The first step is a merge using the pandas library in Python. This step also includes some transformations of fields into workable formats, calcuation of the Percent Medicare Covered metric, and a simple summary of the merged dataset (which gets saved locally as "merged_data.csv").
+Each [year's data were locally downloaded](Data/Medicare_Inpatient_Hospital_by_Provider_and_Service_datasets(2017-2021)) and extracted into their component .csv files. The first step is a merge using the pandas library in Python. This step also includes some transformations of fields into workable formats, calculation of the Percent Medicare Covered metric, and a simple summary of the merged dataset (which gets saved locally as "merged_data.csv").
 
 ```python
 # Import the pandas library
@@ -240,6 +240,40 @@ Black River Community Medical Center               4439.520909
 Wilmington Treatment Center                        4089.928000  
 ```  
 
+What about the relationship between volume (total number of discharges) and amount paid out (as measured by average total payment amount)?  
+As the data across all years, providers, and diagnostic related groupings adds up to well over 880,000 rows, a scatterplot and correlational analysis using these data would be untenable. Therefore, a new dataframe was created that consolidated the data into Provider-Diagnostic Related Grouping combinations, and averaged Total Discharges and Average Total Payment Amount across all years. This dataframe condensed down to ~292,000 rows (a 67% reduction). The code for how this dataframe was created is as follows:  
+```python
+# Group by Provider and DRG_Desc and calculate the average of Tot_Dschrgs and Avg_Tot_Pymt_Amt
+averaged_df = merged_df.groupby(['Rndrng_Prvdr_Org_Name', 'DRG_Desc']).agg({
+    'Tot_Dschrgs': 'mean',
+    'Avg_Tot_Pymt_Amt': 'mean'
+}).reset_index()
+
+# Add a row for the total result
+total_result = averaged_df[['Tot_Dschrgs', 'Avg_Tot_Pymt_Amt']].mean()
+total_result['Rndrng_Prvdr_Org_Name'] = 'Total Result'
+total_result['DRG_Desc'] = 'Total Result'
+averaged_df = averaged_df.append(total_result, ignore_index=True)
+
+# Print the averaged dataframe
+print(averaged_df)
+```  
+Now a scatterplot would be created that graphs the relationship between Total Discharges and Average Total Payment Amount:  
+```python
+import matplotlib.pyplot as plt
+
+# Create the scatterplot
+plt.figure(figsize=(10, 6))
+plt.scatter(averaged_df['Tot_Dschrgs'], averaged_df['Avg_Tot_Pymt_Amt'], color='blue')
+
+# Set plot labels and title
+plt.xlabel('Total Discharges')
+plt.ylabel('Average Total Payment Amount')
+plt.title('Scatterplot of Total Discharges vs. Average Total Payment Amount')
+
+# Display the plot
+plt.show()
+```  
 
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
