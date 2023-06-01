@@ -345,7 +345,11 @@ print("p-value:", p_value)
 ```  
 Which results in *r* = -0.029, *p* > 1.27.  
 
-To further investigate if the types of providers and the total discharges together can predict average total payments, a Forest Tree Regressor ML model was run on the data. However, the providers would need to be grouped into a maanageable number of meaningful categories. Fortunately, the Hospital_General_Information.csv(Data/  
+To further investigate if the types of providers and the total discharges together can predict average total payments, a Forest Tree Regressor ML model was run on the data. However, the providers would need to be grouped into a maanageable number of meaningful categories. Fortunately, the [Hospital_General_Information.csv](Data/Hospital_General_Information/Hospital_General_Information.csv) has categorization of each Medicare provider by Hospital Type and Hospital Ownership that have a limited number of parameters and can be used to test the hypothesis that provider type and/or ownership may be able to predict costs.  
+The following code uses Facility ID and Rndrng_Prvdr_CCN to insert Hospital Type and Hospital Ownership columns into the merged_df dataframe.  
+```python
+
+```
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
