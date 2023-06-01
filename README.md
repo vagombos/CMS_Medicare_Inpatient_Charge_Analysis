@@ -11,9 +11,10 @@
 ### Background and Research Questions:  
 A critical part of the healthcare sector is the link between the services rendered by providers and hospitals, and how those costs are passed down to insurance companies and the government (in the case of Medicare and Medicaid as examples). This is a particularly important area of research because Medicare costs have been rising and public opinion leans in the direction of more coverage, though how most understand where costs come from is complex and sometimes conflicting.[^1]
 - The Research Questions are: 
+    - **What trends are there in payments and discharges over the last five years (2017-2021) as represented in the CMS data?
     - **What factors captured in the data may account for higher payments?**
     - **What factors may account for more (or less) Medicare coverage for payments?**
-    - **What payments/coverage can we predict for the next year (i.e., 2022, as the data's timeframe is 2017-2021)?**  
+      
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
@@ -36,6 +37,9 @@ A critical part of the healthcare sector is the link between the services render
      - *Avg_Mdcr_Pymt_Amt*: The average amount that Medicare pays to the provider for Medicare's share of the MS-DRG. Medicare payment amounts include the MS-            DRG amount, teaching, disproportionate share, capital, and outlier payments for all cases. Medicare payments DO NOT include beneficiary co- payments              and deductible amounts nor any additional payments from third parties for coordination of benefits.  
 
 Additionally, a simple metric called *"Prct_Mdcr_Covered" (Percent of Medicare Covered)* was calculated to determine what proportion of the average total payment was payed out by Medicare to the provider (i.e., "Prct_Mdcr_Covered" = "Avg_Mdcr_Pymt_Amt"] / ["Avg_Tot_Pymt_Amt"]) * 100).  
+
+Finally, the accompanying [Hospital General Information dataset](https://data.cms.gov/provider-data/dataset/xubh-q36u) was also used to categorize providers later in the analyses. Primarily, recoding of providers by their Facility ID in the Hospital General Information data, which corresponds to the Rndrng_Prvdr_CCN in the above CMS Inpatient Data, allowed the categorization of Providers by Provider Type ('Hospital Type') and Ownership ('Hospital Ownership'). The data dictionary is downloadable at CMS, but is also provided [here, in the Data folder of this repository](Data/HOSPITAL_Data_Dictionary.pdf).  
+
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
@@ -325,7 +329,7 @@ There are interesting insights we can distill from these results:
 - Based on the diagnostic groupings and total discharges, outliers with highest Average Total Payment are **relatively rare (and very involved) diagnostic groupings** (heart transplant and chimeric antigent receptor t-cell...) that likely have very technical and advanced procedures to treat.
 - Those Diagnostic Groupings with the **most frequent discharges (i.e., most common)** also have the **lowest Average Total Amount**--major hip and joint replacements, septicemia/severe sepsis, and alcohol, drug abuse or dependence.  
 
-Note that the relationship between total number of discharges and average total payment amount cannot be assumed with full dataset. The above insights are only potential patterns for further investigation based off of the outliers/anomalies. In fact, there is no linear relationship between the two quantitative variables, as can be calculated with a Pearson's r correlation-coefficient:  
+Note that the relationship between total number of discharges and average total payment amount cannot be assumed with the full (averaged across years, and Provider-DRG combination) dataset. The above insights are only potential patterns for further investigation based off of the outliers/anomalies. In fact, there is no linear relationship between the two quantitative variables, as can be calculated with a Pearson's r correlation-coefficient:  
 ```python
 import scipy.stats as stats
 
