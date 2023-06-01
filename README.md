@@ -325,9 +325,26 @@ There are interesting insights we can distill from these results:
 - Based on the diagnostic groupings and total discharges, outliers with highest Average Total Payment are **relatively rare (and very involved) diagnostic groupings** (heart transplant and chimeric antigent receptor t-cell...) that likely have very technical and advanced procedures to treat.
 - Those Diagnostic Groupings with the **most frequent discharges (i.e., most common)** also have the **lowest Average Total Amount**--major hip and joint replacements, septicemia/severe sepsis, and alcohol, drug abuse or dependence.  
 
+Note that the relationship between total number of discharges and average total payment amount cannot be assumed with full dataset. The above insights are only potential patterns for further investigation based off of the outliers/anomalies. In fact, there is no linear relationship between the two quantitative variables, as can be calculated with a Pearson's r correlation-coefficient:  
+```python
+import scipy.stats as stats
+
+# Filter out providers with null values in Avg_Tot_Pymt_Amt or Tot_Dschrgs
+filtered_df = averaged_df.dropna(subset=['Avg_Tot_Pymt_Amt', 'Tot_Dschrgs'])
+
+# Calculate correlation coefficient and p-value
+correlation, p_value = stats.pearsonr(filtered_df['Avg_Tot_Pymt_Amt'], filtered_df['Tot_Dschrgs'])
+
+# Display the correlation coefficient and p-value
+print("Correlation coefficient:", correlation)
+print("p-value:", p_value)
+```  
+Which results in *r* = -0.029, *p* > 1.27.  
+
+
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
-### [Conclusions and Insights]  
+### Conclusions and Insights   
 
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
