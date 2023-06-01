@@ -274,13 +274,63 @@ plt.title('Scatterplot of Total Discharges vs. Average Total Payment Amount')
 # Display the plot
 plt.show()
 ```  
+![Scatterplot_TotalDischarges_and_AvgTotPayments](Images/Scatterplot_TotalDischarges_and_AvgTotPayments.PNG)  
 
+Although no obvious linear correlation appears to exist based on the scatterplot, it does highlight interesting outliers on both ends of each variable. And, surprisingly, those Provider-Diagnostic Groups with the highest number of discharges tend to have the lowest Average Total Payment Amounts; conversely, the outliers with the highest Average Total Payment Amounts have the lowest number of discharges.  
+To highlight these outliers, I display the Provider-Diagnostic Group combinations that had the following criteria:  
+1. Any plot (Provider-DRG_Desc)  with Total Discharges over 2,000;
+2. Any plot (Provider-DRG_Desc) with Average Total Payment Amount over $500,000  
+The code to provide this:  
+```python
+# Filter the outliers based on the criteria
+outliers = averaged_df[(averaged_df['Tot_Dschrgs'] > 2000) | (averaged_df['Avg_Tot_Pymt_Amt'] > 500000)]
+
+# Sort the outliers summary in descending order by Average Total Payment Amount
+outliers_summary = outliers.sort_values('Avg_Tot_Pymt_Amt', ascending=False)
+
+# Display the summary of outliers
+print(outliers_summary[['Rndrng_Prvdr_Org_Name', 'DRG_Desc', 'Avg_Tot_Pymt_Amt', 'Tot_Dschrgs']])
+```
+Producing the following summary:  
+```
+  Rndrng_Prvdr_Org_Name  \
+113145          Keck Hospital Of Usc   
+291056       Yale-New Haven Hospital   
+65156       Duke University Hospital   
+99246   Hospital For Special Surgery   
+162690  New England Baptist Hospital   
+2331            Adventhealth Orlando   
+259058        Turning Point Hospital   
+
+                                                 DRG_Desc  Avg_Tot_Pymt_Amt  \
+113145  HEART TRANSPLANT OR IMPLANT OF HEART ASSIST SY...       632473.0800   
+291056  CHIMERIC ANTIGEN RECEPTOR (CAR) T-CELL AND OTH...       616026.3600   
+65156   CHIMERIC ANTIGEN RECEPTOR (CAR) T-CELL AND OTH...       510916.0900   
+99246   MAJOR HIP AND KNEE JOINT REPLACEMENT OR REATTA...        22827.4140   
+162690  MAJOR HIP AND KNEE JOINT REPLACEMENT OR REATTA...        15590.0420   
+2331    SEPTICEMIA OR SEVERE SEPSIS WITHOUT MV >96 HOU...        14841.0775   
+259058  ALCOHOL, DRUG ABUSE OR DEPENDENCE WITH REHABIL...         7854.3880   
+
+        Tot_Dschrgs  
+113145         13.0  
+291056         11.0  
+65156          11.0  
+99246        3548.2  
+162690       2130.8  
+2331         2157.5  
+259058       2244.2  
+```  
+There are interesting insights we can distill from these results:  
+- The most expensive (top three outliers on Average Total Payment Amount) are **university-teaching hospitals** (Keck-USC; Yale-New Haven; Duke Univeristy)
+- Based on the diagnostic groupings and total discharges, outliers with highest Average Total Payment are **relatively rare (and very involved) diagnostic groupings** (heart transplant and chimeric antigent receptor t-cell...) that likely have very technical and advanced procedures to treat.
+- Those Diagnostic Groupings with the **most frequent discharges (i.e., most common)** also have the **lowest Average Total Amount**--major hip and joint replacements, septicemia/severe sepsis, and alcohol, drug abuse or dependence.  
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
+### [Conclusions and Insights]  
 
 
-
+<sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 ---
 ### References 
 [^1]: Blendon, R. J., Brodie, M., Benson, J. M., Altman, D. E., & Buhr, T. (2006). Americans' views of health care costs, access, and quality. The Milbank quarterly, 84(4), 623–657. https://doi.org/10.1111/j.1468-0009.2006.00463.x
