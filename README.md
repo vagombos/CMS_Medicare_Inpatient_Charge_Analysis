@@ -345,13 +345,14 @@ print("p-value:", p_value)
 ```  
 Which results in *r* = -0.029, *p* > 1.27.  
 
+To further investigate if the types of providers and the total discharges together can predict average total payments, a Forest Tree Regressor ML model was run on the data. However, the providers would need to be grouped into a maanageable number of meaningful categories. Fortunately, the Hospital_General_Information.csv(Data/  
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
 ### Conclusions and Insights   
 
 
-<sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
+<sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>  
 ---
 ### References 
 [^1]: Blendon, R. J., Brodie, M., Benson, J. M., Altman, D. E., & Buhr, T. (2006). Americans' views of health care costs, access, and quality. The Milbank quarterly, 84(4), 623–657. https://doi.org/10.1111/j.1468-0009.2006.00463.x
