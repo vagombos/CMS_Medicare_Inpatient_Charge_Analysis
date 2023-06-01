@@ -11,7 +11,7 @@
 ### Background and Research Questions:  
 A critical part of the healthcare sector is the link between the services rendered by providers and hospitals, and how those costs are passed down to insurance companies and the government (in the case of Medicare and Medicaid as examples). This is a particularly important area of research because Medicare costs have been rising and public opinion leans in the direction of more coverage, though how most understand where costs come from is complex and sometimes conflicting.[^1]
 - The Research Questions are: 
-    - **What trends are there in payments and discharges over the last five years (2017-2021) as represented in the CMS data?
+    - **What trends are there in payments and discharges over the last five years (2017-2021) as represented in the CMS data?**  
     - **What factors captured in the data may account for higher payments?**
     - **What factors may account for more (or less) Medicare coverage for payments?**
       
@@ -23,7 +23,7 @@ A critical part of the healthcare sector is the link between the services render
 - Key factors have been established in the literature on medical costs that point to especially good prospects in the dataset to investigate, thus giving clearer direction on what to focus on:
 1. The **type of diagnosis/condition of patients** is a driver for medical costs--especially chronic ones.[^2]
 2. The **number of discharges or volume of services** by providers is related to medical costs. [^3]
-3. The **types of providers/hospitals** have a relationship to Medicare costs.[^4],[^5]  
+3. The **types of providers/hospitals** are related to medical costs.[^4],[^5]  
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
