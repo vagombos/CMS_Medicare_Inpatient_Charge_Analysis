@@ -1,0 +1,799 @@
+"drg","mdc","medsurg","msdrg","drgdesc","comments","drgvers","msdrgvers"
+"039",,,,,,24,25
+"041",,,,,,24,25
+"042",,,,,,24,25
+"047",,,,,,24,25
+"048",,,,,,24,25
+"051",,,,,,24,25
+"056",,,,,,24,25
+"057",,,,,,24,25
+"058",,,,,,24,25
+"059",,,,,,24,25
+"060",,,,,,24,25
+"061",,,,,,24,25
+"062",,,,,,24,25
+"063",,,,,,24,25
+"069",,,,,,24,25
+"070",,,,,,24,25
+"071",,,,,,24,25
+"098",,,,,,24,25
+"100",,,,,,24,25
+"137",,,,,,24,25
+"142",,,,,,24,25
+"184",,,,,,24,25
+"246",,,,,,24,25
+"252",,,,,,24,25
+"253",,,,,,24,25
+"254",,,,,,24,25
+"255",,,,,,24,25
+"261",,,,,,24,25
+"262",,,,,,24,25
+"270",,,,,,24,25
+"279",,,,,,24,25
+"282",,,,,,24,25
+"298",,,,,,24,25
+"314",,,,,,24,25
+"322",,,,,,24,25
+"327",,,,,,24,25
+"329",,,,,,24,25
+"330",,,,,,24,25
+"340",,,,,,24,25
+"342",,,,,"CMS v24 DRG 342/343 deleted. OR procedure 640 (Circumcision) changed to Non-OR. ",24,25
+"343",,,,,,24,25
+"363",,,,,,24,25
+"364",,,,,,24,25
+"414",,,,,,24,25
+"420",,,,,,24,25
+"446",,,,,,24,25
+"451",,,,,,24,25
+"509",,,,,,24,25
+"511",,,,,,24,25
+"522",,,,,,24,25
+"563",,,,,,24,25
+"568",,,,,,24,25
+"575",,,,,,24,25
+"103","PR","S","001","Heart transplant or implant of heart assist system w MCC",,24,25
+,,,"002","Heart transplant or implant of heart assist system w/o MCC",,24,25
+"541","PR","S","003","ECMO or trach w MV 96+ hrs or PDX exc face, mouth & neck w maj O.R.",,24,25
+"542","PR","S","004","Trach w MV 96+ hrs or PDX exc face, mouth & neck w/o maj O.R.",,24,25
+"480","PR","S","005","Liver transplant w MCC or intestinal transplant","  Procedure 4697 (Transplant of intestine) is always assigned to MS-DRG 005 regardless of severity level",24,25
+,,,"006","Liver transplant w/o MCC",,24,25
+"495","PR","S","007","Lung transplant",,24,25
+"512","PR","S","008","Simultaneous pancreas/kidney transplant",,24,25
+"481","PR","S","009","Bone marrow transplant",,24,25
+"513","PR","S","010","Pancreas transplant",,24,25
+"482","PR","S","011","Tracheostomy for face,mouth & neck diagnoses w MCC",,24,25
+,,,"012","Tracheostomy for face,mouth & neck diagnoses w CC",,24,25
+,,,"013","Tracheostomy for face,mouth & neck diagnoses w/o CC/MCC",,24,25
+"528","01","S","020","Intracranial vascular procedures w PDX hemorrhage w MCC",,24,25
+,,,"021","Intracranial vascular procedures w PDX hemorrhage w CC",,24,25
+,,,"022","Intracranial vascular procedures w PDX hemorrhage w/o CC/MCC",,24,25
+"543","01","S","023","Cranio w major dev impl/acute complex CNS PDX w MCC or chemo implant","Non-or procedure 0010(Implant chemothera agent) is always assigned to MS-DRG 023 regardless of severity level;  Added procedure 0062 to MS-DRG 023-027 ",24,25
+,,,"024","Cranio w major dev impl/acute complex CNS PDX w/o MCC",,24,25
+"001","01","S","025","Craniotomy & endovascular intracranial procedures w MCC","*CMS v24 DRG 003 procedures are split between MS-DRGs 025,026,027,031,032,033; Added procedure 0062 to MS-DRG 023-027 ",24,25
+"002",,,"026","Craniotomy & endovascular intracranial procedures w CC",,24,25
+"003*",,,"027","Craniotomy & endovascular intracranial procedures w/o CC/MCC",,24,25
+"531","01","S","028","Spinal procedures w MCC",,24,25
+"532",,,"029","Spinal procedures w CC or spinal neurostimulators","Combination of 0393 with (8694 or 8695 or 8697 or 8698) is always assigned to MS-DRG 029 regardless of severity level",24,25
+,,,"030","Spinal procedures w/o CC/MCC",,24,25
+"529","01","S","031","Ventricular shunt procedures w MCC",,24,25
+"530",,,"032","Ventricular shunt procedures w CC",,24,25
+,,,"033","Ventricular shunt procedures w/o CC/MCC",,24,25
+"577","01","S","034","Carotid artery stent procedure w MCC",,24,25
+,,,"035","Carotid artery stent procedure w CC",,24,25
+,,,"036","Carotid artery stent procedure w/o CC/MCC",,24,25
+"533","01","S","037","Extracranial procedures w MCC",,24,25
+"534",,,"038","Extracranial procedures w CC",,24,25
+,,,"039","Extracranial procedures w/o CC/MCC",,24,25
+"006","01","S","040","Periph & cranial nerve & other nerv syst proc w MCC",,24,25
+"007",,,"041","Periph/cranial nerve & other nerv syst proc w CC or periph neurostim","Combination of 0492 with (8694 or 8695 or 8697 or 8698) is always assigned to MS-DRG 041 regardless of severity",24,25
+"008",,,"042","Periph & cranial nerve & other nerv syst proc w/o CC/MCC",,24,25
+"009","01","M","052","Spinal disorders & injuries w CC/MCC",,24,25
+,,,"053","Spinal disorders & injuries w/o CC/MCC",,24,25
+"010","01","M","054","Nervous system neoplasms w MCC",,24,25
+"011",,,"055","Nervous system neoplasms w/o MCC",,24,25
+"012","01","M","056","Degenerative nervous system disorders w MCC",,24,25
+,,,"057","Degenerative nervous system disorders w/o MCC",,24,25
+"013","01","M","058","Multiple sclerosis & cerebellar ataxia w MCC",,24,25
+,,,"059","Multiple sclerosis & cerebellar ataxia w CC",,24,25
+,,,"060","Multiple sclerosis & cerebellar ataxia w/o CC/MCC",,24,25
+"559","01","M","061","Acute ischemic stroke w use of thrombolytic agent w MCC",,24,25
+,,,"062","Acute ischemic stroke w use of thrombolytic agent w CC",,24,25
+,,,"063","Acute ischemic stroke w use of thrombolytic agent w/o CC/MCC",,24,25
+"014","01","M","064","Intracranial hemorrhage or cerebral infarction w MCC",,24,25
+,,,"065","Intracranial hemorrhage or cerebral infarction w CC",,24,25
+,,,"066","Intracranial hemorrhage or cerebral infarction w/o CC/MCC",,24,25
+"015","01","M","067","Nonspecific cva & precerebral occlusion w/o infarct w MCC",,24,25
+,,,"068","Nonspecific cva & precerebral occlusion w/o infarct w/o MCC",,24,25
+"524","01","M","069","Transient ischemia",,24,25
+"016","01","M","070","Nonspecific cerebrovascular disorders w MCC",,24,25
+"017",,,"071","Nonspecific cerebrovascular disorders w CC",,24,25
+,,,"072","Nonspecific cerebrovascular disorders w/o CC/MCC",,24,25
+"018","01","M","073","Cranial & peripheral nerve disorders w MCC",,24,25
+"019",,,"074","Cranial & peripheral nerve disorders w/o MCC",,24,25
+"021","01","M","075","Viral meningitis w CC/MCC",,24,25
+,,,"076","Viral meningitis w/o CC/MCC",,24,25
+"022","01","M","077","Hypertensive encephalopathy w MCC",,24,25
+,,,"078","Hypertensive encephalopathy w CC",,24,25
+,,,"079","Hypertensive encephalopathy w/o CC/MCC",,24,25
+"023","01","M","080","Nontraumatic stupor & coma w MCC",,24,25
+,,,"081","Nontraumatic stupor & coma w/o MCC",,24,25
+"027","01","M","082","Traumatic stupor & coma, coma >1 hr w MCC",,24,25
+,,,"083","Traumatic stupor & coma, coma >1 hr w CC",,24,25
+,,,"084","Traumatic stupor & coma, coma >1 hr w/o CC/MCC",,24,25
+"028","01","M","085","Traumatic stupor & coma, coma <1 hr w MCC",,24,25
+"029",,,"086","Traumatic stupor & coma, coma <1 hr w CC",,24,25
+"030",,,"087","Traumatic stupor & coma, coma <1 hr w/o CC/MCC",,24,25
+"031","01","M","088","Concussion w MCC",,24,25
+"032",,,"089","Concussion w CC",,24,25
+"033",,,"090","Concussion w/o CC/MCC",,24,25
+"034","01","M","091","Other disorders of nervous system w MCC",,24,25
+"035",,,"092","Other disorders of nervous system w CC",,24,25
+,,,"093","Other disorders of nervous system w/o CC/MCC",,24,25
+"560","01","M","094","Bacterial & tuberculous infections of nervous system w MCC",,24,25
+,,,"095","Bacterial & tuberculous infections of nervous system w CC",,24,25
+,,,"096","Bacterial & tuberculous infections of nervous system w/o CC/MCC",,24,25
+"561","01","M","097","Non-bacterial infect of nervous sys exc viral meningitis w MCC",,24,25
+,,,"098","Non-bacterial infect of nervous sys exc viral meningitis w CC",,24,25
+,,,"099","Non-bacterial infect of nervous sys exc viral meningitis w/o CC/MCC",,24,25
+"026*","01","M","100","Seizures w MCC","* CMS v24 DRG 026 PDX are split between MS-DRGs 100,101,102,103",24,25
+"562",,,"101","Seizures w/o MCC",,24,25
+"564","01","M","102","Headaches w MCC",,24,25
+,,,"103","Headaches w/o MCC",,24,25
+"037","02","S","113","Orbital procedures w CC/MCC",,24,25
+,,,"114","Orbital procedures w/o CC/MCC",,24,25
+"040","02","S","115","Extraocular procedures except orbit",,24,25
+"036","02","S","116","Intraocular procedures w CC/MCC",,24,25
+"038",,,"117","Intraocular procedures w/o CC/MCC",,24,25
+"044","02","M","121","Acute major eye infections w CC/MCC",,24,25
+,,,"122","Acute major eye infections w/o CC/MCC",,24,25
+"045","02","M","123","Neurological eye disorders",,24,25
+"043","02","M","124","Other disorders of the eye w  MCC ",,24,25
+"046",,,"125","Other disorders of the eye w/o  MCC ",,24,25
+"049","03","S","129","Major head & neck procedures w CC/MCC or major device","Procedures 2096,2097,2098 (cochlear implants) are always assigned to MS-DRG 129 regardless of severity level",24,25
+,,,"130","Major head & neck procedures w/o CC/MCC",,24,25
+,"03","S","131","Cranial/facial procedures w CC/MCC",,24,25
+,,,"132","Cranial/facial procedures w/o CC/MCC",,24,25
+"052","03","S","133","Other ear, nose, mouth & throat O.R. procedures w CC/MCC",,24,25
+"055",,,"134","Other ear, nose, mouth & throat O.R. procedures w/o CC/MCC",,24,25
+"053","03","S","135","Sinus & mastoid procedures w CC/MCC",,24,25
+"054",,,"136","Sinus & mastoid procedures w/o CC/MCC",,24,25
+"168","03","S","137","Mouth procedures w CC/MCC",,24,25
+"169",,,"138","Mouth procedures w/o CC/MCC",,24,25
+"050","03","S","139","Salivary gland procedures",,24,25
+"064","03","M","146","Ear, nose, mouth & throat malignancy w MCC",,24,25
+,,,"147","Ear, nose, mouth & throat malignancy w CC",,24,25
+,,,"148","Ear, nose, mouth & throat malignancy w/o CC/MCC",,24,25
+"065","03","M","149","Dysequilibrium",,24,25
+"066","03","M","150","Epistaxis w MCC",,24,25
+,,,"151","Epistaxis w/o MCC",,24,25
+"067","03","M","152","Otitis media & URI w MCC",,24,25
+"068",,,"153","Otitis media & URI w/o MCC",,24,25
+"072","03","M","154","Nasal trauma & deformity w MCC",,24,25
+"073",,,"155","Nasal trauma & deformity w CC",,24,25
+"074",,,"156","Nasal trauma & deformity w/o CC/MCC",,24,25
+"185","03","M","157","Dental & Oral Diseases w MCC",,24,25
+"186",,,"158","Dental & Oral Diseases w CC",,24,25
+"187",,,"159","Dental & Oral Diseases w/o CC/MCC",,24,25
+"075","04","S","163","Major chest procedures w MCC",,24,25
+,,,"164","Major chest procedures w CC",,24,25
+,,,"165","Major chest procedures w/o CC/MCC",,24,25
+"076","04","S","166","Other resp system O.R. procedures w MCC",,24,25
+"077",,,"167","Other resp system O.R. procedures w CC",,24,25
+,,,"168","Other resp system O.R. procedures w/o CC/MCC",,24,25
+"078","04","M","175","Pulmonary embolism w MCC",,24,25
+,,,"176","Pulmonary embolism w/o MCC",,24,25
+"079","04","M","177","Respiratory infections & inflammations w MCC",,24,25
+"080",,,"178","Respiratory infections & inflammations w CC",,24,25
+"081",,,"179","Respiratory infections & inflammations w/o CC/MCC",,24,25
+"082","04","M","180","Respiratory neoplasms w MCC",,24,25
+,,,"181","Respiratory neoplasms w CC",,24,25
+,,,"182","Respiratory neoplasms w/o CC/MCC",,24,25
+"083","04","M","183","Major chest trauma w MCC",,24,25
+"084",,,"184","Major chest trauma w CC",,24,25
+,,,"185","Major chest trauma w/o CC/MCC",,24,25
+"085","04","M","186","Pleural effusion w MCC",,24,25
+"086",,,"187","Pleural effusion w CC",,24,25
+,,,"188","Pleural effusion w/o CC/MCC",,24,25
+"087","04","M","189","Pulmonary edema & respiratory failure",,24,25
+"088","04","M","190","Chronic obstructive pulmonary disease w MCC",,24,25
+,,,"191","Chronic obstructive pulmonary disease w CC",,24,25
+,,,"192","Chronic obstructive pulmonary disease w/o CC/MCC",,24,25
+"089","04","M","193","Simple pneumonia & pleurisy w MCC",,24,25
+"090",,,"194","Simple pneumonia & pleurisy w CC",,24,25
+"091",,,"195","Simple pneumonia & pleurisy w/o CC/MCC",,24,25
+"092","04","M","196","Interstitial lung disease w MCC",,24,25
+"093",,,"197","Interstitial lung disease w CC",,24,25
+,,,"198","Interstitial lung disease w/o CC/MCC",,24,25
+"094","04","M","199","Pneumothorax w MCC ",,24,25
+"095",,,"200","Pneumothorax w CC",,24,25
+,,,"201","Pneumothorax w/o CC/MCC ",,24,25
+"096","04","M","202","Bronchitis & asthma w CC/MCC",,24,25
+"097",,,"203","Bronchitis & asthma w/o CC/MCC",,24,25
+"099","04","M","204","Respiratory signs & symptoms",,24,25
+"101","04","M","205","Other respiratory system diagnoses w MCC",,24,25
+"102",,,"206","Other respiratory system diagnoses w/o MCC",,24,25
+"565","04","M","207","Respiratory system diagnosis w ventilator support 96+ hours",,24,25
+"566","04","M","208","Respiratory system diagnosis w ventilator support <96 hours",,24,25
+"525","05","S","215","Other heart assist system implant",,24,25
+"104","05","S","216","Cardiac valve & oth maj cardiothoracic proc w card cath w MCC",,24,25
+,,,"217","Cardiac valve & oth maj cardiothoracic proc w card cath w CC",,24,25
+,,,"218","Cardiac valve & oth maj cardiothoracic proc w card cath w/o CC/MCC",,24,25
+"105","05","S","219","Cardiac valve & oth maj cardiothoracic proc w/o card cath w MCC",,24,25
+,,,"220","Cardiac valve & oth maj cardiothoracic proc w/o card cath w CC",,24,25
+,,,"221","Cardiac valve & oth maj cardiothoracic proc w/o card cath w/o CC/MCC",,24,25
+"535","05","S","222","Cardiac defib implant w cardiac cath w AMI/HF/shock w MCC",,24,25
+,,,"223","Cardiac defib implant w cardiac cath w AMI/HF/shock w/o MCC",,24,25
+"536","05","S","224","Cardiac defib implant w cardiac cath w/o AMI/HF/shock w MCC",,24,25
+,,,"225","Cardiac defib implant w cardiac cath w/o AMI/HF/shock w/o MCC",,24,25
+"515","05","S","226","Cardiac defibrillator implant w/o cardiac cath w MCC",,24,25
+,,,"227","Cardiac defibrillator implant w/o cardiac cath w/o MCC",,24,25
+"108","05","S","228","Other cardiothoracic procedures w MCC",,24,25
+,,,"229","Other cardiothoracic procedures w CC",,24,25
+,,,"230","Other cardiothoracic procedures w/o CC/MCC",,24,25
+"106","05","S","231","Coronary bypass w PTCA w MCC",,24,25
+,,,"232","Coronary bypass w PTCA w/o MCC",,24,25
+"547","05","S","233","Coronary bypass w cardiac cath w MCC",,24,25
+"548",,,"234","Coronary bypass w cardiac cath w/o MCC",,24,25
+"549","05","S","235","Coronary bypass w/o cardiac cath w MCC",,24,25
+"550",,,"236","Coronary bypass w/o cardiac cath w/o MCC",,24,25
+"110","05","S","237","Major cardiovasc procedures w MCC or thoracic aortic anuerysm repair","Procedure code 3973 (Endovascular implantation of graft in thoracic aorta) is always assigned to MS-DRG 237 regardless of severity level",24,25
+"111",,,"238","Major cardiovascular procedures w/o MCC",,24,25
+"113","05","S","239","Amputation for circ sys disorders exc upper limb & toe w MCC ",,24,25
+,,,"240","Amputation for circ sys disorders exc upper limb & toe w CC",,24,25
+,,,"241","Amputation for circ sys disorders exc upper limb & toe w/o CC/MCC ",,24,25
+"551","05","S","242","Permanent cardiac pacemaker implant w MCC",,24,25
+"552",,,"243","Permanent cardiac pacemaker implant w CC",,24,25
+,,,"244","Permanent cardiac pacemaker implant w/o CC/MCC",,24,25
+,"05","S","245","AICD lead & generator procedures",,24,25
+"557","05","S","246","Perc cardiovasc proc w drug-eluting stent w MCC or 4+ vessels/stents","Combination procedures (0066 and 3607) with 0043 or 0048 is always assigned to MS-DRG 246 regardless of severity level",24,25
+"558",,,"247","Perc cardiovasc proc w drug-eluting stent w/o MCC",,24,25
+"555","05","S","248","Perc cardiovasc proc w non-drug-eluting stent w MCC or 4+ ves/stents","Combination procedures (0066 and 3606) with 0043 or 0048 is always assigned to MS-DRG 248 regardless of severity level",24,25
+"556",,,"249","Perc cardiovasc proc w non-drug-eluting stent w/o MCC",,24,25
+"518","05","S","250","Perc cardiovasc proc w/o coronary artery stent or AMI w MCC",,24,25
+,,,"251","Perc cardiovasc proc w/o coronary artery stent or AMI w/o MCC",,24,25
+"479","05","S","252","Other vascular procedures w MCC",,24,25
+"553",,,"253","Other vascular procedures w CC",,24,25
+"554",,,"254","Other vascular procedures w/o CC/MCC",,24,25
+"114","05","S","255","Upper limb & toe amputation for circ system disorders w MCC",,24,25
+,,,"256","Upper limb & toe amputation for circ system disorders w CC",,24,25
+,,,"257","Upper limb & toe amputation for circ system disorders w/o CC/MCC",,24,25
+"118","05","S","258","Cardiac pacemaker device replacement w MCC",,24,25
+,,,"259","Cardiac pacemaker device replacement w/o MCC",,24,25
+"117","05","S","260","Cardiac pacemaker revision except device replacement w MCC",,24,25
+,,,"261","Cardiac pacemaker revision except device replacement w CC",,24,25
+,,,"262","Cardiac pacemaker revision except device replacement w/o CC/MCC",,24,25
+"119","05","S","263","Vein ligation & stripping",,24,25
+"120","05","S","264","Other circulatory system O.R. procedures",,24,25
+"121","05","M","280","Acute myocardial infarction, discharged alive w MCC",,24,25
+"122",,,"281","Acute myocardial infarction, discharged alive w CC",,24,25
+,,,"282","Acute myocardia infarction, discharged alive w/o CC/MCC",,24,25
+"123","05","M","283","Acute myocardial infarction, expired w MCC",,24,25
+,,,"284","Acute myocardial infarction, expired w CC",,24,25
+,,,"285","Acute myocardial infarction, expired w/o CC/MCC",,24,25
+"124","05","M","286","Circulatory disorders except AMI, w card cath w MCC",,24,25
+"125",,,"287","Circulatory disorders except AMI, w card cath w/o MCC",,24,25
+"126","05","M","288","Acute & subacute endocarditis w MCC",,24,25
+,,,"289","Acute & subacute endocarditis w CC",,24,25
+,,,"290","Acute & subacute endocarditis w/o CC/MCC",,24,25
+"127","05","M","291","Heart failure & shock w MCC",,24,25
+,,,"292","Heart failure & shock w CC",,24,25
+,,,"293","Heart failure & shock w/o CC/MCC",,24,25
+"128","05","M","294","Deep vein thrombophlebitis w CC/MCC",,24,25
+,,,"295","Deep vein thrombophlebitis w/o CC/MCC",,24,25
+"129","05","M","296","Cardiac arrest, unexplained w MCC",,24,25
+,,,"297","Cardiac arrest, unexplained w CC",,24,25
+,,,"298","Cardiac arrest, unexplained w/o CC/MCC",,24,25
+"130","05","M","299","Peripheral vascular disorders w MCC",,24,25
+"131",,,"300","Peripheral vascular disorders w CC",,24,25
+,,,"301","Peripheral vascular disorders w/o CC/MCC",,24,25
+"132","05","M","302","Atherosclerosis w MCC",,24,25
+"133",,,"303","Atherosclerosis w/o MCC",,24,25
+"134","05","M","304","Hypertension w MCC",,24,25
+,,,"305","Hypertension w/o MCC",,24,25
+"135","05","M","306","Cardiac congenital & valvular disorders w MCC",,24,25
+"136",,,"307","Cardiac congenital & valvular disorders w/o MCC",,24,25
+"138","05","M","308","Cardiac arrhythmia & conduction disorders w MCC",,24,25
+"139",,,"309","Cardiac arrhythmia & conduction disorders w CC",,24,25
+,,,"310","Cardiac arrhythmia & conduction disorders w/o CC/MCC",,24,25
+"140","05","M","311","Angina pectoris",,24,25
+"141","05","M","312","Syncope & collapse",,24,25
+"143","05","M","313","Chest pain",,24,25
+"144","05","M","314","Other circulatory system diagnoses w MCC",,24,25
+"145",,,"315","Other circulatory system diagnoses w CC",,24,25
+,,,"316","Other circulatory system diagnoses w/o CC/MCC",,24,25
+"155","06","S","326","Stomach, esophageal & duodenal proc w MCC",,24,25
+"156",,,"327","Stomach, esophageal & duodenal proc w CC",,24,25
+"567",,,"328","Stomach, esophageal & duodenal proc w/o CC/MCC",,24,25
+"149","06","S","329","Major small & large bowel procedures w MCC",,24,25
+"569",,,"330","Major small & large bowel procedures w CC",,24,25
+"570",,,"331","Major small & large bowel procedures w/o CC/MCC",,24,25
+"146","06","S","332","Rectal resection w MCC",,24,25
+"147",,,"333","Rectal resection w CC",,24,25
+,,,"334","Rectal resection w/o CC/MCC",,24,25
+"150","06","S","335","Peritoneal adhesiolysis w MCC",,24,25
+"151",,,"336","Peritoneal adhesiolysis w CC",,24,25
+,,,"337","Peritoneal adhesiolysis w/o CC/MCC",,24,25
+"164","06","S","338","Appendectomy w complicated principal diag w MCC",,24,25
+"165",,,"339","Appendectomy w complicated principal diag w CC",,24,25
+,,,"340","Appendectomy w complicated principal diag w/o CC/MCC",,24,25
+"166","06","S","341","Appendectomy w/o complicated principal diag w MCC",,24,25
+"167",,,"342","Appendectomy w/o complicated principal diag w CC",,24,25
+,,,"343","Appendectomy w/o complicated principal diag w/o CC/MCC",,24,25
+"152","06","S","344","Minor small & large bowel procedures w MCC",,24,25
+"153",,,"345","Minor small & large bowel procedures w CC",,24,25
+,,,"346","Minor small & large bowel procedures w/o CC/MCC",,24,25
+"157","06","S","347","Anal & stomal procedures w MCC",,24,25
+"158",,,"348","Anal & stomal procedures w CC",,24,25
+,,,"349","Anal & stomal procedures w/o CC/MCC",,24,25
+"161","06","S","350","Inguinal & femoral hernia procedures w MCC","*CMS v24 DRG 163 procedures are split between MS-DRGs 350,351,352,353,354,355 ",24,25
+"162",,,"351","Inguinal & femoral hernia procedures w CC",,24,25
+"163*",,,"352","Inguinal & femoral hernia procedures w/o CC/MCC",,24,25
+"159","06","S","353","Hernia procedures except inguinal & femoral w MCC",,24,25
+"160",,,"354","Hernia procedures except inguinal & femoral w CC",,24,25
+,,,"355","Hernia procedures except inguinal & femoral w/o CC/MCC",,24,25
+"170","06","S","356","Other digestive system O.R. procedures w MCC",,24,25
+"171",,,"357","Other digestive system O.R. procedures w CC",,24,25
+,,,"358","Other digestive system O.R. procedures w/o CC/MCC",,24,25
+"571","06","M","368","Major esophageal disorders w MCC",,24,25
+,,,"369","Major esophageal disorders w CC",,24,25
+,,,"370","Major esophageal disorders w/o CC/MCC",,24,25
+"572","06","M","371","Major gastrointestinal disorders & peritoneal infections w MCC",,24,25
+,,,"372","Major gastrointestinal disorders & peritoneal infections w CC",,24,25
+,,,"373","Major gastrointestinal disorders & peritoneal infections w/o CC/MCC",,24,25
+"172","06","M","374","Digestive malignancy w MCC",,24,25
+"173",,,"375","Digestive malignancy w CC",,24,25
+,,,"376","Digestive malignancy w/o CC/MCC",,24,25
+"174","06","M","377","G.I. hemorrhage w MCC",,24,25
+"175",,,"378","G.I. hemorrhage w CC",,24,25
+,,,"379","G.I. hemorrhage w/o CC/MCC",,24,25
+"176","06","M","380","Complicated peptic ulcer w MCC",,24,25
+,,,"381","Complicated peptic ulcer w CC",,24,25
+,,,"382","Complicated peptic ulcer w/o CC/MCC",,24,25
+"177","06","M","383","Uncomplicated peptic ulcer w MCC",,24,25
+"178",,,"384","Uncomplicated peptic ulcer w/o MCC",,24,25
+"179","06","M","385","Inflammatory bowel disease w MCC",,24,25
+,,,"386","Inflammatory bowel disease w CC",,24,25
+,,,"387","Inflammatory bowel disease w/o CC/MCC",,24,25
+"180","06","M","388","G.I. obstruction w MCC",,24,25
+"181",,,"389","G.I. obstruction w CC",,24,25
+,,,"390","G.I. obstruction w/o CC/MCC",,24,25
+"182","06","M","391","Esophagitis, gastroent & misc digest disorders w MCC",,24,25
+"183",,,"392","Esophagitis, gastroent & misc digest disorders w/o MCC",,24,25
+"188","06","M","393","Other digestive system diagnoses w MCC",,24,25
+"189",,,"394","Other digestive system diagnoses w CC",,24,25
+"190",,,"395","Other digestive system diagnoses w/o CC/MCC",,24,25
+"191","07","S","405","Pancreas, liver & shunt procedures w MCC",,24,25
+"192",,,"406","Pancreas, liver & shunt procedures w CC",,24,25
+,,,"407","Pancreas, liver & shunt procedures w/o CC/MCC",,24,25
+"193","07","S","408","Biliary tract proc except only cholecyst w or w/o c.d.e. w MCC",,24,25
+"194",,,"409","Biliary tract proc except only cholecyst w or w/o c.d.e. w CC",,24,25
+,,,"410","Biliary tract proc except only cholecyst w or w/o c.d.e. w/o CC/MCC",,24,25
+"195","07","S","411","Cholecystectomy w c.d.e. w MCC",,24,25
+"196",,,"412","Cholecystectomy w c.d.e. w CC",,24,25
+,,,"413","Cholecystectomy w c.d.e. w/o CC/MCC",,24,25
+"197","07","S","414","Cholecystectomy except by laparoscope w/o c.d.e. w MCC",,24,25
+"198",,,"415","Cholecystectomy except by laparoscope w/o c.d.e. w CC",,24,25
+,,,"416","Cholecystectomy except by laparoscope w/o c.d.e. w/o CC/MCC",,24,25
+"493","07","S","417","Laparoscopic cholecystectomy w/o c.d.e. w MCC",,24,25
+"494",,,"418","Laparoscopic cholecystectomy w/o c.d.e. w CC",,24,25
+,,,"419","Laparoscopic cholecystectomy w/o c.d.e. w/o CC/MCC",,24,25
+"199","07","S","420","Hepatobiliary diagnostic procedures w MCC",,24,25
+"200",,,"421","Hepatobiliary diagnostic procedures w CC",,24,25
+,,,"422","Hepatobiliary diagnostic procedures w/o CC/MCC",,24,25
+"201","07","S","423","Other hepatobiliary or pancreas O.R. procedures w MCC",,24,25
+,,,"424","Other hepatobiliary or pancreas O.R. procedures w CC",,24,25
+,,,"425","Other hepatobiliary or pancreas O.R. procedures w/o CC/MCC",,24,25
+"202","07","M","432","Cirrhosis & alcoholic hepatitis w MCC",,24,25
+,,,"433","Cirrhosis & alcoholic hepatitis w CC",,24,25
+,,,"434","Cirrhosis & alcoholic hepatitis w/o CC/MCC",,24,25
+"203","07","M","435","Malignancy of hepatobiliary system or pancreas w MCC",,24,25
+,,,"436","Malignancy of hepatobiliary system or pancreas w CC",,24,25
+,,,"437","Malignancy of hepatobiliary system or pancreas w/o CC/MCC",,24,25
+"204","07","M","438","Disorders of pancreas except malignancy w MCC",,24,25
+,,,"439","Disorders of pancreas except malignancy w CC",,24,25
+,,,"440","Disorders of pancreas except malignancy w/o CC/MCC",,24,25
+"205","07","M","441","Disorders of liver except malig,cirr,alc hepa w MCC",,24,25
+"206",,,"442","Disorders of liver except malig,cirr,alc hepa w CC",,24,25
+,,,"443","Disorders of liver except malig,cirr,alc hepa w/o CC/MCC",,24,25
+"207","07","M","444","Disorders of the biliary tract w MCC",,24,25
+"208",,,"445","Disorders of the biliary tract w CC",,24,25
+,,,"446","Disorders of the biliary tract w/o CC/MCC",,24,25
+"496","08","S","453","Combined anterior/posterior spinal fusion w MCC",,24,25
+,,,"454","Combined anterior/posterior spinal fusion w CC",,24,25
+,,,"455","Combined anterior/posterior spinal fusion w/o CC/MCC",,24,25
+"546","08","S","456","Spinal fus exc cerv w spinal curv/malig/infec or 9+ fus w MCC","Addition of infections to PDX list and criteria of  spinal fusion with non-or procedure 8164 will assign to MS-DRGs 456-458",24,25
+,,,"457","Spinal fus exc cerv w spinal curv/malig/infec or 9+ fus w CC",,24,25
+,,,"458","Spinal fus exc cerv w spinal curv/malig/infec or 9+ fus w/o CC/MCC",,24,25
+"497","08","S","459","Spinal fusion except cervical w MCC",,24,25
+"498",,,"460","Spinal fusion except cervical w/o MCC",,24,25
+"471","08","S","461","Bilateral or multiple major joint procs of lower extremity w MCC ",,24,25
+,,,"462","Bilateral or multiple major joint procs of lower extremity w/o MCC ",,24,25
+"217","08","S","463","Wnd debrid & skn grft exc hand, for musculo-conn tiss dis w MCC",,24,25
+,,,"464","Wnd debrid & skn grft exc hand, for musculo-conn tiss dis w CC",,24,25
+,,,"465","Wnd debrid & skn grft exc hand, for musculo-conn tiss dis w/o CC/MCC",,24,25
+"545","08","S","466","Revision of hip or knee replacement w MCC",,24,25
+,,,"467","Revision of hip or knee replacement w CC",,24,25
+,,,"468","Revision of hip or knee replacement w/o CC/MCC",,24,25
+"544","08","S","469","Major joint replacement or reattachment of lower extremity w MCC",,24,25
+,,,"470","Major joint replacement or reattachment of lower extremity w/o MCC",,24,25
+"519","08","S","471","Cervical spinal fusion w MCC",,24,25
+"520",,,"472","Cervical spinal fusion w CC",,24,25
+,,,"473","Cervical spinal fusion w/o CC/MCC",,24,25
+"213","08","S","474","Amputation for musculoskeletal sys & conn tissue dis w MCC",,24,25
+,,,"475","Amputation for musculoskeletal sys & conn tissue dis w CC",,24,25
+,,,"476","Amputation for musculoskeletal sys & conn tissue dis w/o CC/MCC",,24,25
+"216","08","S","477","Biopsies of musculoskeletal system & connective tissue w MCC",,24,25
+,,,"478","Biopsies of musculoskeletal system & connective tissue w CC",,24,25
+,,,"479","Biopsies of musculoskeletal system & connective tissue w/o CC/MCC",,24,25
+"210","08","S","480","Hip & femur procedures except major joint w MCC",,24,25
+"211",,,"481","Hip & femur procedures except major joint w CC",,24,25
+"212",,,"482","Hip & femur procedures except major joint w/o CC/MCC",,24,25
+"491","08","S","483","Major joint & limb reattachment proc of upper extremity w CC/MCC",,24,25
+,,,"484","Major joint & limb reattachment proc of upper extremity w/o CC/MCC",,24,25
+"501","08","S","485","Knee procedures w pdx of infection w MCC","Added procedure codes 0083 and 0084 to MS-DRGs 485-489",24,25
+"502",,,"486","Knee procedures w pdx of infection w CC",,24,25
+,,,"487","Knee procedures w pdx of infection w/o CC/MCC",,24,25
+"503","08","S","488","Knee procedures w/o pdx of infection w CC/MCC","Added procedure codes 0083 and 0084 to MS-DRGs 485-489",24,25
+,,,"489","Knee procedures w/o pdx of infection w/o CC/MCC",,24,25
+"499","08","S","490","Back & neck proc exc spinal fusion w CC/MCC or disc device/neurostim","Procedures 8459, 8462, 8465, 8480, 8482, 8484 are always assigned to MS-DRG 490 regardless of severity level; Combination 0393 with (8694 or 8695 or 8697 or 8698) is always assigned to MS-DRG 490 regardless of severity level",24,25
+"500",,,"491","Back & neck proc exc spinal fusion w/o CC/MCC",,24,25
+"218","08","S","492","Lower extrem & humer proc except hip,foot,femur w MCC",,24,25
+"219",,,"493","Lower extrem & humer proc except hip,foot,femur w CC",,24,25
+"220",,,"494","Lower extrem & humer proc except hip,foot,femur w/o CC/MCC",,24,25
+"537","08","S","495","Local excision & removal int fix devices exc hip & femur w MCC",,24,25
+"538",,,"496","Local excision & removal int fix devices exc hip & femur w CC",,24,25
+,,,"497","Local excision & removal int fix devices exc hip & femur w/o CC/MCC",,24,25
+"230","08","S","498","Local excision & removal int fix devices of hip & femur w CC/MCC",,24,25
+,,,"499","Local excision & removal int fix devices of hip & femur w/o CC/MCC",,24,25
+"226","08","S","500","Soft tissue procedures w MCC",,24,25
+"227",,,"501","Soft tissue procedures w CC",,24,25
+,,,"502","Soft tissue procedures w/o CC/MCC",,24,25
+"225","08","S","503","Foot procedures w MCC",,24,25
+,,,"504","Foot procedures w CC",,24,25
+,,,"505","Foot procedures w/o CC/MCC",,24,25
+"228","08","S","506","Major thumb or joint procedures",,24,25
+"223","08","S","507","Major shoulder or elbow joint procedures w CC/MCC",,24,25
+,,,"508","Major shoulder or elbow joint procedures w/o CC/MCC",,24,25
+"232","08","S","509","Arthroscopy",,24,25
+"224","08","S","510","Shoulder,elbow or forearm proc,exc major joint proc w MCC",,24,25
+,,,"511","Shoulder,elbow or forearm proc,exc major joint proc w CC",,24,25
+,,,"512","Shoulder,elbow or forearm proc,exc major joint proc w/o CC/MCC",,24,25
+"229","08","S","513","Hand or wrist proc, except major thumb or joint proc w CC/MCC",,24,25
+,,,"514","Hand or wrist proc, except major thumb or joint proc w/o CC/MCC",,24,25
+"233","08","S","515","Other musculoskelet sys & conn tiss O.R. proc w MCC",,24,25
+"234",,,"516","Other musculoskelet sys & conn tiss O.R. proc w CC",,24,25
+,,,"517","Other musculoskelet sys & conn tiss O.R. proc w/o CC/MCC",,24,25
+"235","08","M","533","Fractures of femur w MCC",,24,25
+,,,"534","Fractures of femur w/o MCC",,24,25
+"236","08","M","535","Fractures of hip & pelvis w MCC",,24,25
+,,,"536","Fractures of hip & pelvis w/o MCC",,24,25
+"237","08","M","537","Sprains, strains, & dislocations of hip, pelvis & thigh w CC/MCC",,24,25
+,,,"538","Sprains, strains, & dislocations of hip, pelvis & thigh w/o CC/MCC",,24,25
+"238","08","M","539","Osteomyelitis w MCC",,24,25
+,,,"540","Osteomyelitis w CC",,24,25
+,,,"541","Osteomyelitis w/o CC/MCC",,24,25
+"239","08","M","542","Pathological fractures & musculoskelet & conn tiss malig w MCC",,24,25
+,,,"543","Pathological fractures & musculoskelet & conn tiss malig w CC",,24,25
+,,,"544","Pathological fractures & musculoskelet & conn tiss malig w/o CC/MCC",,24,25
+"240","08","M","545","Connective tissue disorders w MCC",,24,25
+"241",,,"546","Connective tissue disorders w CC",,24,25
+,,,"547","Connective tissue disorders w/o CC/MCC",,24,25
+"242","08","M","548","Septic arthritis w MCC",,24,25
+,,,"549","Septic arthritis w CC",,24,25
+,,,"550","Septic arthritis w/o CC/MCC",,24,25
+"243","08","M","551","Medical back problems w MCC",,24,25
+,,,"552","Medical back problems w/o MCC",,24,25
+"244","08","M","553","Bone diseases & arthropathies w MCC",,24,25
+"245",,,"554","Bone diseases & arthropathies w/o MCC",,24,25
+"247","08","M","555","Signs & symptoms of musculoskeletal system & conn tissue w MCC",,24,25
+,,,"556","Signs & symptoms of musculoskeletal system & conn tissue w/o MCC",,24,25
+"248","08","M","557","Tendonitis, myositis & bursitis w MCC",,24,25
+,,,"558","Tendonitis, myositis & bursitis w/o MCC",,24,25
+"249","08","M","559","Aftercare, musculoskeletal system & connective tissue w MCC",,24,25
+,,,"560","Aftercare, musculoskeletal system & connective tissue w CC",,24,25
+,,,"561","Aftercare, musculoskeletal system & connective tissue w/o CC/MCC",,24,25
+"250","08","M","562","Fx, sprn, strn & disl except femur, hip, pelvis & thigh w MCC",,24,25
+"251",,,"563","Fx, sprn, strn & disl except femur, hip, pelvis & thigh w/o MCC",,24,25
+"256","08","M","564","Other musculoskeletal sys & connective tissue diagnoses w MCC",,24,25
+,,,"565","Other musculoskeletal sys & connective tissue diagnoses w CC",,24,25
+,,,"566","Other musculoskeletal sys & connective tissue diagnoses w/o CC/MCC",,24,25
+"263","09","S","573","Skin graft &/or debrid for skn ulcer or cellulitis w MCC",,24,25
+"264",,,"574","Skin graft &/or debrid for skn ulcer or cellulitis w CC",,24,25
+,,,"575","Skin graft &/or debrid for skn ulcer or cellulitis w/o CC/MCC",,24,25
+"265","09","S","576","Skin graft &/or debrid exc for skin ulcer or cellulitis w MCC",,24,25
+"266",,,"577","Skin graft &/or debrid exc for skin ulcer or cellulitis w CC",,24,25
+,,,"578","Skin graft &/or debrid exc for skin ulcer or cellulitis w/o CC/MCC",,24,25
+"267","09","S","579","Other skin, subcut tiss & breast proc w MCC",,24,25
+"268",,,"580","Other skin, subcut tiss & breast proc w CC",,24,25
+"269",,,"581","Other skin, subcut tiss & breast proc w/o CC/MCC",,24,25
+"257","09","S","582","Mastectomy for malignancy w CC/MCC",,24,25
+"258",,,"583","Mastectomy for malignancy w/o CC/MCC",,24,25
+"259","09","S","584","Breast biopsy, local excision & other breast procedures w CC/MCC",,24,25
+"260",,,"585","Breast biopsy, local excision & other breast procedures w/o CC/MCC",,24,25
+"271","09","M","592","Skin ulcers w MCC",,24,25
+,,,"593","Skin ulcers w CC",,24,25
+,,,"594","Skin ulcers w/o CC/MCC",,24,25
+"272","09","M","595","Major skin disorders w MCC",,24,25
+"273",,,"596","Major skin disorders w/o MCC",,24,25
+"274","09","M","597","Malignant breast disorders w MCC",,24,25
+"275",,,"598","Malignant breast disorders w CC",,24,25
+,,,"599","Malignant breast disorders w/o CC/MCC",,24,25
+"276","09","M","600","Non-malignant breast disorders w CC/MCC",,24,25
+,,,"601","Non-malignant breast disorders w/o CC/MCC",,24,25
+"277","09","M","602","Cellulitis w MCC",,24,25
+"278",,,"603","Cellulitis w/o MCC",,24,25
+"280","09","M","604","Trauma to the skin, subcut tiss & breast w MCC",,24,25
+"281",,,"605","Trauma to the skin, subcut tiss & breast w/o MCC",,24,25
+"283","09","M","606","Minor skin disorders w MCC",,24,25
+"284",,,"607","Minor skin disorders w/o MCC",,24,25
+"286","10","S","614","Adrenal & pituitary procedures w CC/MCC",,24,25
+,,,"615","Adrenal & pituitary procedures w/o CC/MCC",,24,25
+"285","10","S","616","Amputat of lower limb for endocrine,nutrit,& metabol dis w MCC",,24,25
+,,,"617","Amputat of lower limb for endocrine,nutrit,& metabol dis w CC",,24,25
+,,,"618","Amputat of lower limb for endocrine,nutrit,& metabol dis w/o CC/MCC",,24,25
+"288","10","S","619","O.R. procedures for obesity w MCC",,24,25
+,,,"620","O.R. procedures for obesity w CC",,24,25
+,,,"621","O.R. procedures for obesity w/o CC/MCC",,24,25
+"287","10","S","622","Skin grafts & wound debrid for endoc, nutrit & metab dis w MCC",,24,25
+,,,"623","Skin grafts & wound debrid for endoc, nutrit & metab dis w CC",,24,25
+,,,"624","Skin grafts & wound debrid for endoc, nutrit & metab dis w/o CC/MCC",,24,25
+"289","10","S","625","Thyroid, parathyroid & thyroglossal procedures w MCC",,24,25
+"290",,,"626","Thyroid, parathyroid & thyroglossal procedures w CC",,24,25
+"291",,,"627","Thyroid, parathyroid & thyroglossal procedures w/o CC/MCC",,24,25
+"292","10","S","628","Other endocrine, nutrit & metab O.R. proc w MCC",,24,25
+"293",,,"629","Other endocrine, nutrit & metab O.R. proc w CC",,24,25
+,,,"630","Other endocrine, nutrit & metab O.R. proc w/o CC/MCC",,24,25
+"294","10","M","637","Diabetes w MCC",,24,25
+"295",,,"638","Diabetes w CC",,24,25
+,,,"639","Diabetes w/o CC/MCC",,24,25
+"296","10","M","640","Nutritional & misc metabolic disorders w MCC",,24,25
+"297",,,"641","Nutritional & misc metabolic disorders w/o MCC",,24,25
+"299","10","M","642","Inborn errors of metabolism",,24,25
+"300","10","M","643","Endocrine disorders w MCC",,24,25
+"301",,,"644","Endocrine disorders w CC",,24,25
+,,,"645","Endocrine disorders w/o CC/MCC",,24,25
+"302","11","S","652","Kidney transplant",,24,25
+"573","11","S","653","Major bladder procedures w MCC",,24,25
+,,,"654","Major bladder procedures w CC",,24,25
+,,,"655","Major bladder procedures w/o CC/MCC  ",,24,25
+"303","11","S","656","Kidney & ureter procedures for neoplasm w MCC",,24,25
+,,,"657","Kidney & ureter procedures forneoplasm w CC",,24,25
+,,,"658","Kidney & ureter procedures for neoplasm w/o CC/MCC",,24,25
+"304","11","S","659","Kidney & ureter procedures for non-neoplasm w MCC",,24,25
+"305",,,"660","Kidney & ureter procedures for non-neoplasm w CC",,24,25
+,,,"661","Kidney & ureter procedures for non-neoplasm w/o CC/MCC",,24,25
+"308","11","S","662","Minor bladder procedures w MCC",,24,25
+"309",,,"663","Minor bladder procedures w CC",,24,25
+,,,"664","Minor bladder procedures w/o CC/MCC",,24,25
+"306","11","S","665","Prostatectomy w MCC",,24,25
+"307",,,"666","Prostatectomy w CC",,24,25
+,,,"667","Prostatectomy w/o CC/MCC",,24,25
+"310","11","S","668","Transurethral procedures w MCC",,24,25
+"311",,,"669","Transurethral procedures w CC",,24,25
+,,,"670","Transurethral procedures w/o CC/MCC",,24,25
+"312","11","S","671","Urethral procedures w CC/MCC",,24,25
+"313",,,"672","Urethral procedures w/o CC/MCC",,24,25
+"315","11","S","673","Other kidney & urinary tract procedures w MCC",,24,25
+,,,"674","Other kidney & urinary tract procedures w CC",,24,25
+,,,"675","Other kidney & urinary tract procedures w/o CC/MCC",,24,25
+"316","11","M","682","Renal failure w MCC",,24,25
+,,,"683","Renal failure w CC",,24,25
+,,,"684","Renal failure w/o CC/MCC",,24,25
+"317","11","M","685","Admit for renal dialysis",,24,25
+"318","11","M","686","Kidney & urinary tract neoplasms w MCC",,24,25
+"319",,,"687","Kidney & urinary tract neoplasms w CC",,24,25
+,,,"688","Kidney & urinary tract neoplasms w/o CC/MCC",,24,25
+"320","11","M","689","Kidney & urinary tract infections w MCC",,24,25
+"321",,,"690","Kidney & urinary tract infections w/o MCC",,24,25
+"323","11","M","691","Urinary stones w esw lithotripsy w CC/MCC",,24,25
+" ",,,"692","Urinary stones w esw lithotripsy w/o CC/MCC",,24,25
+"324","11","M","693","Urinary stones w/o esw lithotripsy w MCC",,24,25
+,,,"694","Urinary stones w/o esw lithotripsy w/o MCC",,24,25
+"325","11","M","695","Kidney & urinary tract signs & symptoms w MCC",,24,25
+"326",,,"696","Kidney & urinary tract signs & symptoms w/o MCC",,24,25
+"328","11","M","697","Urethral stricture",,24,25
+"331","11","M","698","Other kidney & urinary tract diagnoses w MCC",,24,25
+"332",,,"699","Other kidney & urinary tract diagnoses w CC",,24,25
+"333",,,"700","Other kidney & urinary tract diagnoses w/o CC/MCC",,24,25
+"334","12","S","707","Major male pelvic procedures w CC/MCC",,24,25
+"335",,,"708","Major male pelvic procedures w/o CC/MCC",,24,25
+"341","12","S","709","Penis procedures w CC/MCC",,24,25
+,,,"710","Penis procedures w/o CC/MCC",,24,25
+"338","12","S","711","Testes procedures w CC/MCC",,24,25
+"339",,,"712","Testes procedures w/o CC/MCC",,24,25
+"336","12","S","713","Transurethral prostatectomy w CC/MCC",,24,25
+"337",,,"714","Transurethral prostatectomy w/o CC/MCC",,24,25
+"344","12","S","715","Other male reproductive system O.R. proc for malignancy w CC/MCC",,24,25
+,,,"716","Other male reproductive system O.R. proc for malignancy w/o CC/MCC",,24,25
+"345","12","S","717","Other male reproductive system O.R. proc exc malignancy w CC/MCC",,24,25
+,,,"718","Other male reproductive system O.R. proc exc malignancy w/o CC/MCC",,24,25
+"346","12","M","722","Malignancy, male reproductive system w MCC",,24,25
+"347",,,"723","Malignancy, male reproductive system w CC",,24,25
+,,,"724","Malignancy, male reproductive system w/o CC/MCC",,24,25
+"348","12","M","725","Benign prostatic hypertrophy w MCC",,24,25
+"349",,,"726","Benign prostatic hypertrophy w/o MCC",,24,25
+"350","12","M","727","Inflammation of the male reproductive system w MCC",,24,25
+,,,"728","Inflammation of the male reproductive system w/o MCC",,24,25
+"351","12","M","729","Other male reproductive system diagnoses w CC/MCC",,24,25
+"352",,,"730","Other male reproductive system diagnoses w/o CC/MCC",,24,25
+"353","13","S","734","Pelvic evisceration, rad hysterectomy & rad vulvectomy w CC/MCC",,24,25
+,,,"735","Pelvic evisceration, rad hysterectomy & rad vulvectomy w/o CC/MCC",,24,25
+"357","13","S","736","Uterine & adnexa proc for ovarian or adnexal malignancy w MCC",,24,25
+,,,"737","Uterine & adnexa proc for ovarian or adnexal malignancy w CC",,24,25
+,,,"738","Uterine & adnexa proc for ovarian or adnexal malignancy w/o CC/MCC",,24,25
+"354","13","S","739","Uterine,adnexa proc for non-ovarian/adnexal malig w MCC",,24,25
+"355",,,"740","Uterine,adnexa proc for non-ovarian/adnexal malig w CC",,24,25
+,,,"741","Uterine,adnexa proc for non-ovarian/adnexal malig w/o CC/MCC",,24,25
+"358","13","S","742","Uterine & adnexa proc for non-malignancy w CC/MCC",,24,25
+"359",,,"743","Uterine & adnexa proc for non-malignancy w/o CC/MCC",,24,25
+"361","13","S","744","D&C, conization, laparoscopy & tubal interruption w CC/MCC",,24,25
+"362",,,"745","D&C, conization, laparoscopy & tubal interruption w/o CC/MCC",,24,25
+"360","13","S","746","Vagina, cervix & vulva procedures w CC/MCC",,24,25
+,,,"747","Vagina, cervix & vulva procedures w/o CC/MCC",,24,25
+"356","13","S","748","Female reproductive system reconstructive procedures",,24,25
+"365","13","S","749","Other female reproductive system O.R. procedures w CC/MCC",,24,25
+,,,"750","Other female reproductive system O.R. procedures w/o CC/MCC",,24,25
+"366","13","M","754","Malignancy, female reproductive system w MCC",,24,25
+"367",,,"755","Malignancy, female reproductive system w CC",,24,25
+,,,"756","Malignancy, female reproductive system w/o CC/MCC",,24,25
+"368","13","M","757","Infections, female reproductive system w MCC",,24,25
+,,,"758","Infections, female reproductive system w CC",,24,25
+,,,"759","Infections, female reproductive system w/o CC/MCC",,24,25
+"369","13","M","760","Menstrual & other female reproductive system disorders w CC/MCC",,24,25
+,,,"761","Menstrual & other female reproductive system disorders w/o CC/MCC",,24,25
+"370","14","S","765","Cesarean section w CC/MCC",,24,25
+"371",,,"766","Cesarean section w/o CC/MCC",,24,25
+"374","14","S","767","Vaginal delivery w sterilization &/or D&C",,24,25
+"375","14","S","768","Vaginal delivery w O.R. proc except steril &/or D&C",,24,25
+"377","14","S","769","Postpartum & post abortion diagnoses w O.R. procedure",,24,25
+"381","14","S","770","Abortion w D&C, aspiration curettage or hysterotomy",,24,25
+"372","14","M","774","Vaginal delivery w complicating diagnoses",,24,25
+"373","14","M","775","Vaginal delivery w/o complicating diagnoses",,24,25
+"376","14","M","776","Postpartum & post abortion diagnoses w/o O.R. procedure",,24,25
+"378","14","M","777","Ectopic pregnancy",,24,25
+"379","14","M","778","Threatened abortion",,24,25
+"380","14","M","779","Abortion w/o D&C",,24,25
+"382","14","M","780","False labor",,24,25
+"383","14","M","781","Other antepartum diagnoses w medical complications",,24,25
+"384","14","M","782","Other antepartum diagnoses w/o medical complications",,24,25
+"385","15","M","789","Neonates, died or transferred to another acute care facility",,24,25
+"386","15","M","790","Extreme immaturity or respiratory distress syndrome, neonate",,24,25
+"387","15","M","791","Prematurity w major problems",,24,25
+"388","15","M","792","Prematurity w/o major problems",,24,25
+"389","15","M","793","Full term neonate w major problems",,24,25
+"390","15","M","794","Neonate w other significant problems",,24,25
+"391","15","M","795","Normal newborn",,24,25
+"392","16","S","799","Splenectomy w MCC",,24,25
+"393",,,"800","Splenectomy w CC",,24,25
+,,,"801","Splenectomy w/o CC/MCC",,24,25
+"394","16","S","802","Other O.R. proc of the blood & blood forming organs w MCC",,24,25
+,,,"803","Other O.R. proc of the blood & blood forming organs w CC",,24,25
+,,,"804","Other O.R. proc of the blood & blood forming organs w/o CC/MCC",,24,25
+"574","16","M","808","Major hematol/immun diag exc sickle cell crisis & coagul w MCC",,24,25
+,,,"809","Major hematol/immun diag exc sickle cell crisis & coagul w CC",,24,25
+,,,"810","Major hematol/immun diag exc sickle cell crisis & coagul w/o CC/MCC",,24,25
+"395","16","M","811","Red blood cell disorders w MCC",,24,25
+"396",,,"812","Red blood cell disorders w/o MCC",,24,25
+"397","16","M","813","Coagulation disorders",,24,25
+"398","16","M","814","Reticuloendothelial & immunity disorders w MCC",,24,25
+"399",,,"815","Reticuloendothelial & immunity disorders w CC",,24,25
+,,,"816","Reticuloendothelial & immunity disorders w/o CC/MCC",,24,25
+"539","17","S","820","Lymphoma & leukemia w major O.R. procedure w MCC",,24,25
+"540",,,"821","Lymphoma & leukemia w major O.R. procedure w CC",,24,25
+,,,"822","Lymphoma & leukemia w major O.R. procedure w/o CC/MCC",,24,25
+"401","17","S","823","Lymphoma & non-acute leukemia w other O.R. proc w MCC",,24,25
+"402",,,"824","Lymphoma & non-acute leukemia w other O.R. proc w CC",,24,25
+,,,"825","Lymphoma & non-acute leukemia w other O.R. proc w/o CC/MCC",,24,25
+"406","17","S","826","Myeloprolif disord or poorly diff neopl w maj O.R. proc w MCC",,24,25
+"407",,,"827","Myeloprolif disord or poorly diff neopl w maj O.R. proc w CC",,24,25
+,,,"828","Myeloprolif disord or poorly diff neopl w maj O.R. proc w/o CC/MCC",,24,25
+"408","17","S","829","Myeloprolif disord or poorly diff neopl w other O.R. proc w CC/MCC",,24,25
+,,,"830","Myeloprolif disord or poorly diff neopl w other O.R. proc w/o CC/MCC",,24,25
+"405","17","M","834","Acute leukemia w/o major O.R. procedure w MCC",,24,25
+"473",,,"835","Acute leukemia w/o major O.R. procedure w CC",,24,25
+,,,"836","Acute leukemia w/o major O.R. procedure w/o CC/MCC",,24,25
+"492","17","M","837","Chemo w acute leukemia as sdx or w high dose chemo agent w MCC",,24,25
+,,,"838","Chemo w acute leukemia as sdx w CC or high dose chemo agent","Non-or procedure 0015 will minimally be assigned to 838 with or without the presence of a CC",24,25
+,,,"839","Chemo w acute leukemia as sdx w/o CC/MCC",,24,25
+"403","17","M","840","Lymphoma & non-acute leukemia w MCC",,24,25
+"404",,,"841","Lymphoma & non-acute leukemia w CC",,24,25
+,,,"842","Lymphoma & non-acute leukemia w/o CC/MCC",,24,25
+"411","17","M","843","Other myeloprolif dis or poorly diff neopl diag w MCC",,24,25
+"412",,,"844","Other myeloprolif dis or poorly diff neopl diag w CC",,24,25
+"413",,,"845","Other myeloprolif dis or poorly diff neopl diag w/o CC/MCC",,24,25
+"410","17","M","846","Chemotherapy w/o acute leukemia as secondary diagnosis w MCC",,24,25
+,,,"847","Chemotherapy w/o acute leukemia as secondary diagnosis w CC",,24,25
+,,,"848","Chemotherapy w/o acute leukemia as secondary diagnosis w/o CC/MCC",,24,25
+"409","17","M","849","Radiotherapy",,24,25
+"578","18","S","853","Infectious & parasitic diseases w O.R. procedure w MCC",,24,25
+,,,"854","Infectious & parasitic diseases w O.R. procedure w CC",,24,25
+,,,"855","Infectious & parasitic diseases w O.R. procedure w/o CC/MCC",,24,25
+"579","18","S","856","Postoperative or post-traumatic infections w O.R. proc w MCC",,24,25
+,,,"857","Postoperative or post-traumatic infections w O.R. proc w CC",,24,25
+,,,"858","Postoperative or post-traumatic infections w O.R. proc w/o CC/MCC",,24,25
+"418","18","M","862","Postoperative & post-traumatic infections w MCC",,24,25
+,,,"863","Postoperative & post-traumatic infections w/o MCC",,24,25
+"419","18","M","864","Fever of unknown origin",,24,25
+"421","18","M","865","Viral illness w MCC","*CMS v24 422 PDX split between MS-DRGs 864,865,866",24,25
+"422*",,,"866","Viral illness w/o MCC",,24,25
+"423","18","M","867","Other infectious & parasitic diseases diagnoses w MCC",,24,25
+,,,"868","Other infectious & parasitic diseases diagnoses w CC",,24,25
+,,,"869","Other infectious & parasitic diseases diagnoses w/o CC/MCC",,24,25
+"417","18","M","870","Septicemia w MV 96+ hours",,24,25
+"576","18","M","871","Septicemia w/o MV 96+ hours w MCC",,24,25
+,,,"872","Septicemia w/o MV 96+ hours w/o MCC",,24,25
+"424","19","S","876","O.R. procedure w principal diagnoses of mental illness",,24,25
+"425","19","M","880","Acute adjustment reaction & psychosocial dysfunction",,24,25
+"426","19","M","881","Depressive neuroses",,24,25
+"427","19","M","882","Neuroses except depressive",,24,25
+"428","19","M","883","Disorders of personality & impulse control",,24,25
+"429","19","M","884","Organic disturbances & mental retardation",,24,25
+"430","19","M","885","Psychoses",,24,25
+"431","19","M","886","Behavioral & developmental disorders",,24,25
+"432","19","M","887","Other mental disorder diagnoses",,24,25
+"433","20","M","894","Alcohol/drug abuse or dependence, left ama",,24,25
+"521","20","M","895","Alcohol/drug abuse or dependence w rehabilitation therapy",,24,25
+"523","20","M","896","Alcohol/drug abuse or dependence w/o rehabilitation therapy w MCC",,24,25
+,,,"897","Alcohol/drug abuse or dependence w/o rehabilitation therapy w/o MCC",,24,25
+"440","21","S","901","Wound debridements for injuries w MCC",,24,25
+,,,"902","Wound debridements for injuries w CC",,24,25
+,,,"903","Wound debridements for injuries w/o CC/MCC",,24,25
+"439","21","S","904","Skin grafts for injuries w CC/MCC",,24,25
+,,,"905","Skin grafts for injuries w/o CC/MCC",,24,25
+"441","21","S","906","Hand procedures for injuries",,24,25
+"442","21","S","907","Other O.R. procedures for injuries w MCC",,24,25
+"443",,,"908","Other O.R. procedures for injuries w CC",,24,25
+,,,"909","Other O.R. procedures for injuries w/o CC/MCC",,24,25
+"444","21","M","913","Traumatic injury w MCC",,24,25
+"445",,,"914","Traumatic injury w/o MCC",,24,25
+"447","21","M","915","Allergic reactions w MCC",,24,25
+"448",,,"916","Allergic reactions w/o MCC",,24,25
+"449","21","M","917","Poisoning & toxic effects of drugs w MCC",,24,25
+"450",,,"918","Poisoning & toxic effects of drugs w/o MCC",,24,25
+"452","21","M","919","Complications of treatment w MCC",,24,25
+"453",,,"920","Complications of treatment w CC",,24,25
+,,,"921","Complications of treatment w/o CC/MCC",,24,25
+"454","21","M","922","Other injury, poisoning & toxic effect diag w MCC",,24,25
+"455",,,"923","Other injury, poisoning & toxic effect diag w/o MCC",,24,25
+"504","22","S","927","Extensive burns or full thickness burns w MV 96+ hrs w skin graft",,24,25
+"506","22","S","928","Full thickness burn w skin graft or inhal inj w CC/MCC",,24,25
+"507",,,"929","Full thickness burn w skin graft or inhal inj w/o CC/MCC",,24,25
+"505","22","M","933","Extensive burns or full thickness burns w MV 96+ hrs w/o skin graft",,24,25
+"508","22","M","934","Full thickness burn w/o skin grft or inhal inj",,24,25
+"510","22","M","935","Non-extensive burns",,24,25
+"461","23","S","939","O.R. proc w diagnoses of other contact w health services w MCC",,24,25
+,,,"940","O.R. proc w diagnoses of other contact w health services w CC",,24,25
+,,,"941","O.R. proc w diagnoses of other contact w health services w/o CC/MCC",,24,25
+"462","23","M","945","Rehabilitation w CC/MCC",,24,25
+,,,"946","Rehabilitation w/o CC/MCC",,24,25
+"463","23","M","947","Signs & symptoms w MCC",,24,25
+"464",,,"948","Signs & symptoms w/o MCC",,24,25
+"465","23","M","949","Aftercare w CC/MCC",,24,25
+"466",,,"950","Aftercare w/o CC/MCC",,24,25
+"467","23","M","951","Other factors influencing health status",,24,25
+"484","24","S","955","Craniotomy for multiple significant trauma",,24,25
+"485","24","S","956","Limb reattachment, hip & femur proc for multiple significant trauma",,24,25
+"486","24","S","957","Other O.R. procedures for multiple significant trauma w MCC",,24,25
+,,,"958","Other O.R. procedures for multiple significant trauma w CC",,24,25
+,,,"959","Other O.R. procedures for multiple significant trauma w/o CC/MCC",,24,25
+"487","24","M","963","Other multiple significant trauma w MCC",,24,25
+,,,"964","Other multiple significant trauma w CC",,24,25
+,,,"965","Other multiple significant trauma w/o CC/MCC",,24,25
+"488","25","S","969","HIV w extensive O.R. procedure w MCC",,24,25
+,,,"970","HIV w extensive O.R. procedure w/o MCC",,24,25
+"489","25","M","974","HIV w major related condition w MCC",,24,25
+,,,"975","HIV w major related condition w CC",,24,25
+,,,"976","HIV w major related condition w/o CC/MCC",,24,25
+"490","25","M","977","HIV w or w/o other related condition",,24,25
+"468",,"S","981","Extensive O.R. procedure unrelated to principal diagnosis w MCC",,24,25
+,,,"982","Extensive O.R. procedure unrelated to principal diagnosis w CC",,24,25
+,,,"983","Extensive O.R. procedure unrelated to principal diagnosis w/o CC/MCC",,24,25
+"476",,"S","984","Prostatic O.R. procedure unrelated to principal diagnosis w MCC",,24,25
+,,,"985","Prostatic O.R. procedure unrelated to principal diagnosis w CC",,24,25
+,,,"986","Prostatic O.R. procedure unrelated to principal diagnosis w/o CC/MCC",,24,25
+"477",,"S","987","Non-extensive O.R. proc unrelated to principal diagnosis w MCC",,24,25
+,,,"988","Non-extensive O.R. proc unrelated to principal diagnosis w CC",,24,25
+,,,"989","Non-extensive O.R. proc unrelated to principal diagnosis w/o CC/MCC",,24,25
+"469",,"*","998","Principal diagnosis invalid as discharge diagnosis",,24,25
+"470",,"*","999","Ungroupable",,24,25
