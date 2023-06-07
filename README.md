@@ -12,7 +12,7 @@
 A critical part of the healthcare sector is the link between the services rendered by providers and hospitals, and how those costs are passed down to insurance companies and the government (in the case of Medicare and Medicaid as examples). This is a particularly important area of research because Medicare costs have been rising and public opinion leans in the direction of more coverage, though how most understand where costs come from is complex and sometimes conflicting.[^1]
 - The Research Questions are: 
     - **What trends are there for Medicare Inpatient payments and discharges over the last five years (2017-2021) as represented in the CMS data?**  
-    - **What factors captured in the data may account for higher payments?**  
+    - **What factors captured in the data may account for higher payments (charges)?**  
     
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
@@ -610,17 +610,23 @@ Although this resulted in an improvement, with accuracy at **0.52**, it is still
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
-### Conclusions and Insights 
-Here is a reiteration of the research questions:
+### Conclusions and Insights  
+To reiterate the research questions:  
     - **What trends are there for Medicare Inpatient payments and discharges over the last five years (2017-2021) as represented in the CMS data?**  
-    - **What factors captured in the data may account for higher payments?**  
+    - **What factors captured in the data may account for higher payments (charges)?**  
+    
 #### Trends  
 From 2017-2021, there is an interesting interaction between how many discharges were posted vs. the average amount paid: 
 * The **Total Number of Discharges have been steadily decreasing**. 
 * Conversely, the **Average Total Payment Amount has been increasing**.  
+
 Some of the underlying reasons for these trends may be beyond the scope of the current dataset. Any root-cause analysis may have to take into consideration any changing policies or rates that CMS implemented within those years. Also researchers have found that a variety of demographic factors and intensity of services affect costs, and that would have to be further analyzed.[^6]  
 
-#### Factors Affecting Costs
+#### Factors Affecting Charges
++ Does the diagnosis/condition affect costs? 
++ Does the volume (based on total number of discharges) have an association with costs?
++ Does the nature of the provider/provider type have any relationship with costs?
+
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>  
 
