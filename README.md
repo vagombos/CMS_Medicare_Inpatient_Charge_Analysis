@@ -483,12 +483,17 @@ The following code uses Facility ID and Rndrng_Prvdr_CCN to insert Hospital Type
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
-### Conclusions and Insights   
+### Conclusions and Insights 
+Here is a reiteration of the research questions:
+    - **What trends are there for Medicare Inpatient payments and discharges over the last five years (2017-2021) as represented in the CMS data?**  
+    - **What factors captured in the data may account for higher payments?**  
 #### Trends  
 From 2017-2021, there is an interesting interaction between how many discharges were posted vs. the average amount paid: 
 * The **Total Number of Discharges have been steadily decreasing**. 
 * Conversely, the **Average Total Payment Amount has been increasing**.  
+Some of the underlying reasons for these trends may be beyond the scope of the current dataset. Any root-cause analysis may have to take into consideration any changing policies or rates that CMS implemented within those years. Also researchers have found that a variety of demographic factors and intensity of services affect costs, and that would have to be further analyzed.[^6]  
 
+#### Factors Affecting Costs
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>  
 
@@ -501,3 +506,4 @@ From 2017-2021, there is an interesting interaction between how many discharges 
 [^3]: Hadley, J., Reschovsky, J., Corey, C., & Zuckerman, S. (2009). Medicare fees and the volume of physicians' services.. Inquiry : a journal of medical care organization, provision and financing.
 [^4]: Thompson, J., & Mccue, M. (2004). Organizational and market factors associated with Medicare dependence in inpatient rehabilitation hospitals. Health Services Management Research.
 [^5]: Courtney, P., Darrith, B., Bohl, D., Frisch, N., & Valle, C. (2017). Reconsidering the Affordable Care Act’s Restrictions on Physician-Owned Hospitals: Analysis of CMS Data on Total Hip and Knee Arthroplasty. The Journal of Bone and Joint Surgery.  
+[^6]: Pfuntner A, Wier LM, Steiner C. Costs for Hospital Stays in the United States, 2010. In: Healthcare Cost and Utilization Project (HCUP) Statistical Briefs. Agency for Healthcare Research and Quality (US), Rockville (MD); 2006. PMID: 23447833.
