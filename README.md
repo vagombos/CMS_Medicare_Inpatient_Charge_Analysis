@@ -478,8 +478,135 @@ Which results in *r* = **-0.029**, *p* > **1.27**.
 To further investigate if the types of providers and the total discharges together can predict average total payments, a Forest Tree Regressor ML model was run on the data. However, the providers would need to be grouped into a maanageable number of meaningful categories. Fortunately, the [Hospital_General_Information.csv](Data/Hospital_General_Information/Hospital_General_Information.csv) has categorization of each Medicare provider by Hospital Type and Hospital Ownership that have a limited number of parameters and can be used to test the hypothesis that provider type and/or ownership may be able to predict costs.  
 The following code uses Facility ID and Rndrng_Prvdr_CCN to insert Hospital Type and Hospital Ownership columns into the merged_df dataframe.  
 ```python
+import pandas as pd
 
-```
+# Read the additional dataset
+hospital_info_df = pd.read_csv('.../Hospital_General_Information.csv')
+
+# Select the necessary columns from the additional dataset
+hospital_info_df = hospital_info_df[['Facility ID', 'Hospital Type', 'Hospital Ownership']]
+
+# Rename the column to match the primary key in the merged_df dataframe
+hospital_info_df = hospital_info_df.rename(columns={'Facility ID': 'ï»¿Rndrng_Prvdr_CCN'})
+
+# Convert the data type of the primary key column in the merged_df dataframe
+merged_df['ï»¿Rndrng_Prvdr_CCN'] = merged_df['ï»¿Rndrng_Prvdr_CCN'].astype(str)
+
+# Merge the datasets on the primary key
+merged_df = pd.merge(merged_df, hospital_info_df, on='ï»¿Rndrng_Prvdr_CCN', how='left')
+
+# Print the updated merged_df dataframe with the added columns
+print(merged_df)
+```  
+Next is to map the Hospital Type and Hospital Ownership Codes on the merged_df dataframe with one-hot encoding of the variables to prep for analyses:  
+```python
+# Define the mappings for Hospital Type and Hospital Ownership
+hospital_type_mapping = {
+    'Acute Care - Department of Defense': 1,
+    'Acute Care Hospitals': 2,
+    'Childrens': 3,
+    'Critical Access Hospitals': 4,
+    'Psychiatric': 5
+}
+
+hospital_ownership_mapping = {
+    'Department of Defense': 1,
+    'Government - Federal': 2,
+    'Government - Hospital District or Authority': 3,
+    'Government - Local': 4,
+    'Government - State': 5,
+    'Physician': 6,
+    'Proprietary': 7,
+    'Tribal': 8,
+    'Voluntary non-profit - Church': 9,
+    'Voluntary non-profit - Other': 10,
+    'Voluntary non-profit - Private': 11
+}
+
+# Dummy code the 'Hospital Type' column
+merged_df['Hospital Type Code'] = merged_df['Hospital Type'].map(hospital_type_mapping)
+
+# Dummy code the 'Hospital Ownership' column
+merged_df['Hospital Ownership Code'] = merged_df['Hospital Ownership'].map(hospital_ownership_mapping)
+
+# Print the updated merged_df dataframe with the dummy-coded columns
+print(merged_df[['ï»¿Rndrng_Prvdr_CCN', 'Rndrng_Prvdr_Org_Name', 'Hospital Type', 'Hospital Type Code', 'Hospital Ownership', 'Hospital Ownership Code']])
+```  
+Now to address to what degree the nature of the provider/provider type (will be represented here by Hospital Type Code + Hospital Ownership Code) plays a role in the Average Total Payment Amount across all years, I decided to use a Random Forest Classifier ML model. Because we saw that there was no correlation between Total Discharges and Average Total Payment amount, this first ML model will train using just those two features (Hospital Type Code and Hospital Ownership Code). Note that because Average Total Payment Amount is a continuous variable, it needs to be binned into groups for the classifier model--one simple and meaningful grouping is to divide into thirds (representing "High", "Medium", and "Low" costs).
+
+Here is the model:
+```python
+# Random Forest Classifier model to detect the pattern of the two features (Hospital Tyoe & Hospital Ownership) 
+# on Average Total Payment Amount. Dependent variable is continuous so needs to be binned
+# into thirds (e.g., High-Medium-Low cost), then the classifier model is trained.
+
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
+
+# Select the features and target variable
+X = merged_df[['Hospital Type Code','Hospital Ownership Code']]
+y = merged_df['Avg_Tot_Pymt_Amt']
+
+# Bin the Average Total Payment Amounts into thirds
+y = pd.qcut(y, q=3, labels=False)
+
+# Split the data into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Create and train the Random Forest Classifier model
+model = RandomForestClassifier()
+model.fit(X_train, y_train)
+
+# Predict on the test set
+y_pred = model.predict(X_test)
+
+# Calculate the accuracy
+accuracy = accuracy_score(y_test, y_pred)
+
+# Print the accuracy
+print("Accuracy:", accuracy)
+```  
+The accuracy of this model was **0.36**, showing that within this model, these two features are poor predictors (with accuracy above at least 70% indicating better prediction from the model). The model was also re-run on just one feature at a time, with no improvement.  
+
+To give one more chance at seeing whether Hospital Type and/or Hospital Ownership can be good predictors of costs, the LogisticRegression ML model was used. To prepare the data to accommodate the logistic regression, Average Total Payment Amount had to be recoded into discrete values, representing "High" and "Low" costs. To do this, we create a new column in merged_df called 'Hi-Lo_Pymt_Amt', which will end up being the dependent variable for the model:
+
+```python
+# Create 'Hi-Lo_Pymt_Amt' for logistic regression in the merged_df
+import numpy as np
+
+# Calculate the median of Average Total Payment Amount
+median_payment = np.median(merged_df['Avg_Tot_Pymt_Amt'])
+
+# Create a new column 'Hi-Lo_Pymt_Amt' based on the median split
+merged_df['Hi-Lo_Pymt_Amt'] = np.where(merged_df['Avg_Tot_Pymt_Amt'] > median_payment, 1, 0)
+```  
+Now the LogisticRegression ML model:  
+```python
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+
+# Select the predictors and target variable
+X = merged_df[['Hospital Type Code', 'Hospital Ownership Code']]
+y = merged_df['Hi-Lo_Pymt_Amt']
+
+# Split the data into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Create and train the logistic regression model
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+# Predict on the test set
+y_pred = model.predict(X_test)
+
+# Calculate the accuracy
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy:", accuracy)
+```  
+Although this resulted in an improvement, with accuracy at **0.52**, it is still well below an acceptable threshold to consider that these features are good predictors for high-or-low categories of Average Total Payment Amounts (the average charges of inpatient care).  
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
