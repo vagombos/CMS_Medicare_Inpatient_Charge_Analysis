@@ -358,15 +358,11 @@ The following code uses Facility ID and Rndrng_Prvdr_CCN to insert Hospital Type
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>  
 
 ---  
-
 ###### *Note: Assisted with AI tools for coding only. All content that drove research questions, methodology, interpretation of outcomes/insights, and communication in this markdown document were my own and not assisted with AI.* 
 ---  
-
 ### References 
 [^1]: Blendon, R. J., Brodie, M., Benson, J. M., Altman, D. E., & Buhr, T. (2006). Americans' views of health care costs, access, and quality. The Milbank quarterly, 84(4), 623–657. https://doi.org/10.1111/j.1468-0009.2006.00463.x
 [^2]: Deyo, D., Hemingway, J., & Hughes, D. (2015). Identifying Patients With Undiagnosed Chronic Conditions: An Examination of Patient Costs Before Chronic Disease Diagnosis.. Journal of the American College of Radiology : JACR.
 [^3]: Hadley, J., Reschovsky, J., Corey, C., & Zuckerman, S. (2009). Medicare fees and the volume of physicians' services.. Inquiry : a journal of medical care organization, provision and financing.
 [^4]: Thompson, J., & Mccue, M. (2004). Organizational and market factors associated with Medicare dependence in inpatient rehabilitation hospitals. Health Services Management Research.
 [^5]: Courtney, P., Darrith, B., Bohl, D., Frisch, N., & Valle, C. (2017). Reconsidering the Affordable Care Act’s Restrictions on Physician-Owned Hospitals: Analysis of CMS Data on Total Hip and Knee Arthroplasty. The Journal of Bone and Joint Surgery.  
-
-<sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>   
