@@ -138,7 +138,8 @@ summary_df
 ```
 Which results in the following table:  
 ![SummaryTable1](Images/SummaryTable1.PNG)  
-These relationships may be better understood in yearly trends. The code to create a line graph with total number of discharges is as follows:
+
+These relationships may be better understood in yearly trends. The code to create a line graph with total number of discharges is as follows:  
 ```python
 import matplotlib.pyplot as plt
 
@@ -188,9 +189,75 @@ plt.tight_layout()
 # Show the bar graph
 plt.show()
 ```  
-And while the total number of discharges appears to be going down over the years, the Average Amount (Total and Medicare) have been steadily increasing: ![line_graph_payment_amounts](Images/line_graph_payment_amounts.png)   
+And while the total number of discharges appears to be going down over the years, the Average Amount (Total and Medicare) have been steadily increasing: 
+![line_graph_payment_amounts](Images/line_graph_payment_amounts.png)   
 
-To extend our look at trending, it may be useful to see how two different methods might predict what the Highest Average Total Payment is expected to be in 2022 based on the 2017-2021 data. In the first method, I use one simple estimation model that takes the mean percent change between years and applies it to the interval between 2021's value to get 2022. For the second method, a more traditional approach, I use a simple linear regression equation.
+Another pattern that appears relevant is what appears to be a close correlation between Average Total Payment Amount and Average Medicare Payment Amount. If these two are closely correlated, it may be best to drop one from further analyses, for parsimony. Let's plot the two variables in a scatterplot first, then calculate the Pearson correlation coefficient to determine what the precise relationship is.  
+Scatterplot code:  
+```python
+import matplotlib.pyplot as plt
+
+# Create the scatterplot
+plt.figure(figsize=(10, 6))
+plt.scatter(merged_df['Avg_Mdcr_Pymt_Amt'], merged_df['Avg_Tot_Pymt_Amt'], color='red')
+
+# Set plot labels and title
+plt.xlabel('Average Medicare Covered Amount')
+plt.ylabel('Average Total Payment Amount')
+plt.title('Scatterplot of Average Medicare Covered Amount vs. Average Total Payment Amount')
+
+# Display the plot
+plt.show()
+```  
+There appears to be a strong linear relationship:  
+![Scatterplot_AvgTotal-AvgMedicare](Images/Scatterplot_AvgTotal-AvgMedicare.PNG)  
+
+Pearson correlation coefficient code:  
+```python
+import scipy.stats as stats
+
+# Filter out providers with null values in Avg_Tot_Pymt_Amt or Avg_Mdcr_Pymt_Amt
+filtered_df = merged_df.dropna(subset=['Avg_Tot_Pymt_Amt', 'Avg_Mdcr_Pymt_Amt'])
+
+# Calculate correlation coefficient and p-value
+correlation, p_value = stats.pearsonr(filtered_df['Avg_Tot_Pymt_Amt'], filtered_df['Avg_Mdcr_Pymt_Amt'])
+
+# Display the correlation coefficient and p-value
+print("Correlation coefficient:", correlation)
+print("p-value:", p_value)
+```  
+Pearson correleation coefficient: *r* = **0.98**, *p* < **0.001**  
+
+Suffice it to say, the strong linear relationship provides enough evidence that we can drop one of the variables in our upcoming analyses. Let's keep **Average Total Payment Amount**.  
+
+To extend our look at trending, it may be useful to see how two different methods might predict what the Highest Average Total Payment is expected to be in 2022 based on the 2017-2021 data. In the first method, I use one simple estimation model that takes the mean percent change between years and applies it to the interval between 2021's value to get 2022. For the second method, a more traditional approach, I use a simple linear regression equation.  
+First, let's take a quick look at the Highest Average Payment Amounts for each year:  
+```python
+# Group the dataframe by year
+grouped_df = merged_df.groupby("Year")
+
+# Calculate the summary statistics by Year
+summary_df = grouped_df.agg({
+    "Avg_Tot_Pymt_Amt": ["max"],
+    "Avg_Mdcr_Pymt_Amt": ["max"]
+})
+
+# Rename the columns
+summary_df.columns = ["Max Avg_Tot_Pymt_Amt", "Max Avg_Mdcr_Pymt_Amt"]
+
+# Print the summary statistics
+print(summary_df)
+```  
+Output:  
+      Max Avg_Tot_Pymt_Amt  Max Avg_Mdcr_Pymt_Amt
+Year                                             
+2017             612054.05              569811.00
+2018             424773.86              392289.05
+2019             482520.55              399540.33
+2020             595270.95              593554.95
+2021             520139.92              502846.55  
+
+The MAX values for each year for Average Total Payment Amount are fed into the following two predictive models.  
 
 Here is the code for the mean-percent-change model:  
 ```python
