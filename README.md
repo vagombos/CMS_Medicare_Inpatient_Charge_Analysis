@@ -12,8 +12,7 @@
 A critical part of the healthcare sector is the link between the services rendered by providers and hospitals, and how those costs are passed down to insurance companies and the government (in the case of Medicare and Medicaid as examples). This is a particularly important area of research because Medicare costs have been rising and public opinion leans in the direction of more coverage, though how most understand where costs come from is complex and sometimes conflicting.[^1]
 - The Research Questions are: 
     - **What trends are there for Medicare Inpatient payments and discharges over the last five years (2017-2021) as represented in the CMS data?**  
-    - **What factors captured in the data may account for higher payments?**
-    - **What factors may account for more (or less) Medicare coverage for payments?**
+    - **What factors captured in the data may account for higher payments?**  
     
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
@@ -353,6 +352,10 @@ The following code uses Facility ID and Rndrng_Prvdr_CCN to insert Hospital Type
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
 ### Conclusions and Insights   
+##### Trends  
+From 2017-2021, there is an interesting interaction between how many discharges were posted vs. the average amount paid: 
+* The **Total Number of Discharges have been steadily decreasing**. 
+* Conversely, the **Average Total Payment Amount has been increasing**.  
 
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>  
