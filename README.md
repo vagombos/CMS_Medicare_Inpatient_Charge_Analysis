@@ -19,7 +19,7 @@ A critical part of the healthcare sector is the link between the services render
 ### Statement of Business Task:  
 - This is an exploratory analysis investigating what providers, diagnosis-related groupings, and whether discharges are associated with payments and coverage. Although CMS tracks costs across a variety of stages and areas of care, this case study focuses on just inpatient costs.
 - Key factors have been established in the literature on medical costs that point to especially good prospects in the dataset to investigate, thus giving clearer direction on what to focus on:
-1. The **type of diagnosis/condition of patients** is a driver for medical costs--especially chronic ones.[^2]
+1. The **type of diagnosis/condition/treatment of patients** is a driver for medical costs--especially chronic ones.[^2]
 2. The **number of discharges or volume of services** by providers is related to medical costs. [^3]
 3. The **types of providers/hospitals** are related to medical costs.[^4],[^5]  
 
@@ -623,10 +623,14 @@ From 2017-2021, there is an interesting interaction between how many discharges 
 Some of the underlying reasons for these trends may be beyond the scope of the current dataset. Any root-cause analysis may have to take into consideration any changing policies or rates that CMS implemented within those years. Also researchers have found that a variety of demographic factors and intensity of services affect costs, and that would have to be further analyzed.[^6]  
 
 #### Factors Affecting Charges
-+ Does the diagnosis/condition affect costs? 
-+ Does the volume (based on total number of discharges) have an association with costs?
-+ Does the nature of the provider/provider type have any relationship with costs?
++ Does the diagnosis/condition/treatment affect costs?  
+     >  **Yes**,  certain rare or intense/technical Diagnostic Related Groupings (DRG) were associated with higher average payments. For example **Heart Transplant** and **Chimeric Antigen Receptor (CAR) T-Cell and other Immunotherapies** were considered the most expensive. Lowest inpatient charges were associated with more common or chronic disorders if at high volumes (such as **Cardiac Arrhythmia and Conduction Disorders**) and if at low volumes, more generalized issues (e.g., **Reticuloendothelial and Immunity Disorders**).  
 
++ Does the volume (based on total number of discharges) have an association with costs?
+     >  **No**, no correlation between the number of discharges for any provider and the average total payment amount was found. Although, on a year-to-year basis      (from 2017-2021), the total number of discharges across all providers did show a decline. However, on a per-provider or per-DRG basis, the amount of average      charges appears widely scattered according to the number of discharges.
+
++ Does the nature of the provider/provider type have any relationship with costs?
+     >  **Maybe**, but only when you consider some providers are associated with *treatments/procedures that tend to be higher costs*. For example, in our              dataset, we found that the top three institutions (Keck Hospital of USC, Westchester Medical Center, and Ronald Reagan UCLA Medical Center) were all              associated with the highest Average Total Payment Amount. However, it was for one of the most expensive procedures (Heart Transplant or Implant of Heart          Assist Systems). Two  of those three highest area also university teaching hospitals, so it may be possible that charactersitic also plays a role (but there      was no definitive evidence that this factor plays a systematic role in charges)
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>  
 
