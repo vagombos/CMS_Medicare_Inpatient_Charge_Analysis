@@ -188,7 +188,72 @@ plt.tight_layout()
 # Show the bar graph
 plt.show()
 ```  
-And while the total number of discharges appears to be going down over the years, the Average Amount (Total and Medicare) have been steadily increasing: ![line_graph_payment_amounts](Images/line_graph_payment_amounts.png)  
+And while the total number of discharges appears to be going down over the years, the Average Amount (Total and Medicare) have been steadily increasing: ![line_graph_payment_amounts](Images/line_graph_payment_amounts.png)   
+
+To extend our look at trending, it may be useful to see how two different methods might predict what the Highest Average Total Payment is expected to be in 2022 based on the 2017-2021 data. In the first method, I use one simple estimation model that takes the mean percent change between years and applies it to the interval between 2021's value to get 2022. For the second method, a more traditional approach, I use a simple linear regression equation.
+
+Here is the code for the mean-percent-change model:  
+```python
+import numpy as np
+
+# Define the table data
+data = {
+    'Year': [2017, 2018, 2019, 2020, 2021],
+    'Highest Avg Total Pymt': [612054, 473518, 482521, 595271, 632473]
+}
+
+# Create a DataFrame from the table data
+df = pd.DataFrame(data)
+
+# Calculate the percent change for each consecutive year
+percent_changes = df['Highest Avg Total Pymt'].pct_change()
+
+# Compute the average percent change
+average_percent_change = np.mean(percent_changes)
+
+# Obtain the final actual value for 2021
+final_actual_value = df.loc[df['Year'] == 2021, 'Highest Avg Total Pymt'].values[0]
+
+# Calculate the predicted value for 2022
+predicted_value_2022 = final_actual_value + (average_percent_change * final_actual_value)
+
+# Print the predicted value for 2022
+print('Predicted value for 2022:', predicted_value_2022)
+```  
+This model predicts the Highest Average Payment Amount in 2022 to be **$646,518.87**  
+
+What does a standard linear regression equation predict? Here is the code:  
+```python
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+# Define the table data
+data = {
+    'Year': [2017, 2018, 2019, 2020, 2021],
+    'Highest Avg Total Pymt': [612054, 473518, 482521, 595271, 632473]
+}
+
+# Create a DataFrame from the table data
+df = pd.DataFrame(data)
+
+# Separate the features (Year) and target variable (Highest Avg Total Pymt)
+X = df[['Year']]
+y = df['Highest Avg Total Pymt']
+
+# Create and train the linear regression model
+model = LinearRegression()
+model.fit(X, y)
+
+# Predict the value for 2022 using the linear regression equation
+predicted_value_2022 = model.predict([[2022]])
+
+# Print the predicted value for 2022
+print('Predicted value for 2022:', predicted_value_2022[0])
+```  
+Standard linear regression predicts the Highest Average Total Payment in 2022 to be **$607,944.70**  
+
+
+
 
 To address what factors may play a role in Discharges and Average Total Amount, it's worth looking at Diagnosis Related Group (DRG_Desc) and Provider (Rndrng_Prvdr_Org_Name). Due to the large number of both categories, let's look at the Top and Bottom 5 across all years in a simple summary table, sorted by Average Total Amount. Here is the code used:  
 ```python
