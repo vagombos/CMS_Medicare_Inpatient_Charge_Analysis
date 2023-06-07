@@ -355,10 +355,13 @@ The following code uses Facility ID and Rndrng_Prvdr_CCN to insert Hospital Type
 ### Conclusions and Insights   
 
 
-<sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>    
+<sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>  
+
 ---  
-*Note: Assisted with AI tools for coding only. All content that drove research questions, methodology, interpretation of outcomes/insights, and communication in this markdown document were my own and not assisted with AI.* 
----
+
+###### *Note: Assisted with AI tools for coding only. All content that drove research questions, methodology, interpretation of outcomes/insights, and communication in this markdown document were my own and not assisted with AI.* 
+---  
+
 ### References 
 [^1]: Blendon, R. J., Brodie, M., Benson, J. M., Altman, D. E., & Buhr, T. (2006). Americans' views of health care costs, access, and quality. The Milbank quarterly, 84(4), 623–657. https://doi.org/10.1111/j.1468-0009.2006.00463.x
 [^2]: Deyo, D., Hemingway, J., & Hughes, D. (2015). Identifying Patients With Undiagnosed Chronic Conditions: An Examination of Patient Costs Before Chronic Disease Diagnosis.. Journal of the American College of Radiology : JACR.
