@@ -10,18 +10,18 @@
 ---
 ### Background and Research Questions:  
 A critical part of the healthcare sector is the link between the services rendered by providers and hospitals, and how those costs are passed down to insurance companies and the government (in the case of Medicare and Medicaid as examples). This is a particularly important area of research because Medicare costs have been rising and public opinion leans in the direction of more coverage, though how most understand where costs come from is complex and sometimes conflicting.[^1]
-- The Research Questions are: 
-    - **What trends are there for Medicare Inpatient payments and discharges over the last five years (2017-2021) as represented in the CMS data?**  
-    - **What factors captured in the data may account for higher payments (charges)?**  
-    
+
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
 ### Statement of Business Task:  
-- This is an exploratory analysis investigating what providers, diagnosis-related groupings, and whether discharges are associated with payments and coverage. Although CMS tracks costs across a variety of stages and areas of care, this case study focuses on just inpatient costs.
+- This is an exploratory analysis investigating what providers, diagnosis-related groupings, and whether discharges are associated with payments and coverage. Although CMS tracks costs across a variety of stages and areas of care, this case study focuses on just inpatient costs.  
+- The Research Questions are: 
+    > **What trends are there for Medicare Inpatient payments and discharges over the last five years (2017-2021) as represented in the CMS data?**  
+    > **What factors captured in the data may account for higher payments (charges)?**  
 - Key factors have been established in the literature on medical costs that point to especially good prospects in the dataset to investigate, thus giving clearer direction on what to focus on:
-1. The **type of diagnosis/condition/treatment of patients** is a driver for medical costs--especially chronic ones.[^2]
-2. The **number of discharges or volume of services** by providers is related to medical costs. [^3]
-3. The **types of providers/hospitals** are related to medical costs.[^4],[^5]  
+1. The **type of diagnosis/condition/treatment of patients** is a driver for medical costs.[^2]
+2. The **number of discharges or volume of services** by providers may be related to medical costs. [^3]
+3. The **types of providers/hospitals** may be related to medical costs.[^4],[^5]  
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
@@ -38,7 +38,7 @@ A critical part of the healthcare sector is the link between the services render
  
  - Additionally, a simple metric called *"Prct_Mdcr_Covered" (Percent of Medicare Covered)* was calculated to determine what proportion of the average total        payment was payed out by Medicare to the provider (i.e., "Prct_Mdcr_Covered" = "Avg_Mdcr_Pymt_Amt"] / ["Avg_Tot_Pymt_Amt"]) * 100).  
 
- - Finally, the accompanying [Hospital General Information dataset](https://data.cms.gov/provider-data/dataset/xubh-q36u) was also used to categorize              providers later in the analyses. Primarily, recoding of providers by their Facility ID in the Hospital General Information data, which corresponds to the          Rndrng_Prvdr_CCN in the above CMS Inpatient Data, allowed the categorization of Providers by Provider Type ('Hospital Type') and Ownership ('Hospital              Ownership'). The data dictionary is downloadable at CMS, but is also provided [here, in the Data folder of this repository]        (Data/HOSPITAL_Data_Dictionary.pdf).  
+ - Finally, the accompanying [Hospital General Information dataset](https://data.cms.gov/provider-data/dataset/xubh-q36u) was also used to categorize              providers later in the analyses. Primarily, recoding of providers by their Facility ID in the Hospital General Information data, which corresponds to the          Rndrng_Prvdr_CCN in the above CMS Inpatient Data, allowed the categorization of Providers by Provider Type ('Hospital Type') and Ownership ('Hospital              Ownership'). The data dictionary is downloadable at CMS, but is also provided [here, in the Data folder of this repository](/Data/HOSPITAL_Data_Dictionary.pdf).  
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
