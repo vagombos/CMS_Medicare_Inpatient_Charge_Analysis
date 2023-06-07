@@ -231,6 +231,7 @@ Pearson correleation coefficient: *r* = **0.98**, *p* < **0.001**
 Suffice it to say, the strong linear relationship provides enough evidence that we can drop one of the variables in our upcoming analyses. Let's keep **Average Total Payment Amount**.  
 
 To extend our look at trending, it may be useful to see how two different methods might predict what the Highest Average Total Payment is expected to be in 2022 based on the 2017-2021 data. In the first method, I use one simple estimation model that takes the mean percent change between years and applies it to the interval between 2021's value to get 2022. For the second method, a more traditional approach, I use a simple linear regression equation.  
+
 First, let's take a quick look at the Highest Average Payment Amounts for each year:  
 ```python
 # Group the dataframe by year
@@ -238,25 +239,25 @@ grouped_df = merged_df.groupby("Year")
 
 # Calculate the summary statistics by Year
 summary_df = grouped_df.agg({
-    "Avg_Tot_Pymt_Amt": ["max"],
-    "Avg_Mdcr_Pymt_Amt": ["max"]
+    "Avg_Tot_Pymt_Amt": ["max", "mean"]
 })
 
 # Rename the columns
-summary_df.columns = ["Max Avg_Tot_Pymt_Amt", "Max Avg_Mdcr_Pymt_Amt"]
+summary_df.columns = ["Max Avg_Tot_Pymt_Amt", "Mean Avg_Tot_Pymt_Amt"]
 
 # Print the summary statistics
 print(summary_df)
 ```  
 Output:  
-      Max Avg_Tot_Pymt_Amt  Max Avg_Mdcr_Pymt_Amt
+```
+       Max Avg_Tot_Pymt_Amt    Mean Avg_Tot_Pymt_Amt
 Year                                             
-2017             612054.05              569811.00
-2018             424773.86              392289.05
-2019             482520.55              399540.33
-2020             595270.95              593554.95
-2021             520139.92              502846.55  
-
+2017             612054.05           13770.918314
+2018             424773.86           14396.808389
+2019             482520.55           15081.727973
+2020             595270.95           16590.545868
+2021             520139.92           17620.767520 
+```  
 The MAX values for each year for Average Total Payment Amount are fed into the following two predictive models.  
 
 Here is the code for the mean-percent-change model:  
@@ -266,7 +267,7 @@ import numpy as np
 # Define the table data
 data = {
     'Year': [2017, 2018, 2019, 2020, 2021],
-    'Highest Avg Total Pymt': [612054, 473518, 482521, 595271, 632473]
+    'Highest Avg Total Pymt': [612054.05, 424773.86, 482520.55, 595270.95, 520139.92]
 }
 
 # Create a DataFrame from the table data
@@ -287,7 +288,7 @@ predicted_value_2022 = final_actual_value + (average_percent_change * final_actu
 # Print the predicted value for 2022
 print('Predicted value for 2022:', predicted_value_2022)
 ```  
-This model predicts the Highest Average Payment Amount in 2022 to be **$646,518.87**  
+This model predicts the Highest Average Payment Amount in 2022 to be **$512,001.94**  
 
 What does a standard linear regression equation predict? Here is the code:  
 ```python
@@ -297,7 +298,7 @@ from sklearn.linear_model import LinearRegression
 # Define the table data
 data = {
     'Year': [2017, 2018, 2019, 2020, 2021],
-    'Highest Avg Total Pymt': [612054, 473518, 482521, 595271, 632473]
+    'Highest Avg Total Pymt': [612054.05, 424773.86, 482520.55, 595270.95, 520139.92]
 }
 
 # Create a DataFrame from the table data
@@ -317,10 +318,9 @@ predicted_value_2022 = model.predict([[2022]])
 # Print the predicted value for 2022
 print('Predicted value for 2022:', predicted_value_2022[0])
 ```  
-Standard linear regression predicts the Highest Average Total Payment in 2022 to be **$607,944.70**  
+Standard linear regression predicts the Highest Average Total Payment in 2022 to be **$522,952.52**  
 
-
-
+There is a difference of $10,950.58 between the two model predictions. While there are many other predictive models that can also be used, these two methods are simple and straightforward. That they don't differ by very much (for exploratory purposes) I might choose to use either model based on whether a conservative or liberal criterion is preferred. For example, if we are trying to overestimate (more of a liberal criterion) so that we can anticipate higher costs, the linear regression model might be appropriate. If we favor potential underestimation (a conservative criterion), then use the percent-change model that has the lower predicted value.  Finally, we could split the difference, take the median between the two predicted values (which is **$517,477.23**) to minimize risk of over/underestimation.  
 
 To address what factors may play a role in Discharges and Average Total Amount, it's worth looking at Diagnosis Related Group (DRG_Desc) and Provider (Rndrng_Prvdr_Org_Name). Due to the large number of both categories, let's look at the Top and Bottom 5 across all years in a simple summary table, sorted by Average Total Amount. Here is the code used:  
 ```python
