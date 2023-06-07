@@ -365,3 +365,5 @@ The following code uses Facility ID and Rndrng_Prvdr_CCN to insert Hospital Type
 [^5]: Courtney, P., Darrith, B., Bohl, D., Frisch, N., & Valle, C. (2017). Reconsidering the Affordable Care Act’s Restrictions on Physician-Owned Hospitals: Analysis of CMS Data on Total Hip and Knee Arthroplasty. The Journal of Bone and Joint Surgery.
 
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
+
+##### Note: Assisted with AI tools for coding only. All content that drove research questions, methodology, interpretation of outcomes/insights, and communication in this markdown document were my own and not assisted with AI.
