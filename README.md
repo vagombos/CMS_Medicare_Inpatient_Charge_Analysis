@@ -192,7 +192,7 @@ plt.show()
 And while the total number of discharges appears to be going down over the years, the Average Amount (Total and Medicare) have been steadily increasing: 
 ![line_graph_payment_amounts](Images/line_graph_payment_amounts.png)   
 
-Another pattern that appears relevant is what appears to be a close correlation between Average Total Payment Amount and Average Medicare Payment Amount. If these two are closely correlated, it may be best to drop one from further analyses, for parsimony. Let's plot the two variables in a scatterplot first, then calculate the Pearson correlation coefficient to determine what the precise relationship is.  
+There appears to be a close correlation between Average Total Payment Amount and Average Medicare Payment Amount. If these two are closely correlated, it may be best to drop one from further analyses, for parsimony. Let's plot the two variables in a scatterplot first, then calculate the Pearson correlation coefficient to determine what the precise relationship is.  
 Scatterplot code:  
 ```python
 import matplotlib.pyplot as plt
@@ -473,7 +473,7 @@ correlation, p_value = stats.pearsonr(filtered_df['Avg_Tot_Pymt_Amt'], filtered_
 print("Correlation coefficient:", correlation)
 print("p-value:", p_value)
 ```  
-Which results in *r* = -0.029, *p* > 1.27.  
+Which results in *r* = **-0.029**, *p* > **1.27**.  
 
 To further investigate if the types of providers and the total discharges together can predict average total payments, a Forest Tree Regressor ML model was run on the data. However, the providers would need to be grouped into a maanageable number of meaningful categories. Fortunately, the [Hospital_General_Information.csv](Data/Hospital_General_Information/Hospital_General_Information.csv) has categorization of each Medicare provider by Hospital Type and Hospital Ownership that have a limited number of parameters and can be used to test the hypothesis that provider type and/or ownership may be able to predict costs.  
 The following code uses Facility ID and Rndrng_Prvdr_CCN to insert Hospital Type and Hospital Ownership columns into the merged_df dataframe.  
@@ -484,7 +484,7 @@ The following code uses Facility ID and Rndrng_Prvdr_CCN to insert Hospital Type
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
 ### Conclusions and Insights   
-##### Trends  
+#### Trends  
 From 2017-2021, there is an interesting interaction between how many discharges were posted vs. the average amount paid: 
 * The **Total Number of Discharges have been steadily decreasing**. 
 * Conversely, the **Average Total Payment Amount has been increasing**.  
