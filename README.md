@@ -16,8 +16,8 @@ A critical part of the healthcare sector is the link between the services render
 ### Statement of Business Task:  
 - This is an exploratory analysis investigating what providers, diagnosis-related groupings, and whether discharges are associated with payments and coverage. Although CMS tracks costs across a variety of stages and areas of care, this case study focuses on just inpatient costs.  
 - The Research Questions are: 
-    > **What trends are there for Medicare Inpatient payments and discharges over the last five years (2017-2021) as represented in the CMS data?**  
-    > **What factors captured in the data may account for higher payments (charges)?**  
+    >  **What trends are there for Medicare Inpatient payments and discharges over the last five years (2017-2021) as represented in the CMS data?**  
+    >  **What factors captured in the data may account for higher payments (charges)?**  
 - Key factors have been established in the literature on medical costs that point to especially good prospects in the dataset to investigate, thus giving clearer direction on what to focus on:
 1. The **type of diagnosis/condition/treatment of patients** is a driver for medical costs.[^2]
 2. The **number of discharges or volume of services** by providers may be related to medical costs. [^3]
@@ -40,11 +40,12 @@ A critical part of the healthcare sector is the link between the services render
 
  - Finally, the accompanying [Hospital General Information dataset](https://data.cms.gov/provider-data/dataset/xubh-q36u) was also used to categorize              providers later in the analyses. Primarily, recoding of providers by their Facility ID in the Hospital General Information data, which corresponds to the          Rndrng_Prvdr_CCN in the above CMS Inpatient Data, allowed the categorization of Providers by Provider Type ('Hospital Type') and Ownership ('Hospital              Ownership'). The data dictionary is downloadable at CMS, but is also provided [here, in the Data folder of this repository](/Data/HOSPITAL_Data_Dictionary.pdf).  
 
+(Note that embedded python code that follows may have redundant commands for importing various libraries. This was intentional so that any one part of could be isolated and run on its own if necessary. The main Python libraries used were *numpy, pandas, matplotlib.pyplot, scipy.stats, sklearn.linear_model, sklearn.ensemble,  sklearn.metrics, and sklearn.model_selection*).
+
 <sub>[Back to top](#cms-medicare-inpatient-charge-analysis-python)</sub>
 
 ### Data ETL and Analyses
-Each [year's data were locally downloaded](Data/Medicare_Inpatient_Hospital_by_Provider_and_Service_datasets(2017-2021)) and extracted into their component .csv files. The first step was a merge using the pandas library in Python. This step also includes some transformations of fields into workable formats, calculation of the Percent Medicare Covered metric, and a simple summary of the merged dataset (which gets saved locally as "merged_data.csv").
-
+Each [year's data were locally downloaded](Data/Medicare_Inpatient_Hospital_by_Provider_and_Service_datasets(2017-2021)) and extracted into their component .csv files. The first step was a merge using the pandas library in Python. This step also includes some transformations of fields into workable formats, calculation of the Percent Medicare Covered metric, and a simple summary of the merged dataset (which gets saved locally as "merged_data.csv").  
 ```python
 # Import the pandas library
 import pandas as pd
@@ -86,8 +87,8 @@ merged_df.to_csv("merged_data.csv", index=False)
 
 # Get a summary of the columns and data types
 merged_df.info()
-```
-This returns the following:
+```  
+This returns the following:  
 ```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 886238 entries, 0 to 886237
@@ -116,8 +117,7 @@ memory usage: 114.9+ MB
 ```  
 Although all 15 original fields remain in the dataset, the following analyses pertain only to the ones of interest mentioned above along with the Percent Medicare Covered metric.
 
-- Initial Summary Year by Total Number of Discharges, Average Total Payment Amount, Average Medicare Payment Amount, and Percent Medicare Covered:
-
+- Initial Summary Year by Total Number of Discharges, Average Total Payment Amount, Average Medicare Payment Amount, and Percent Medicare Covered:  
 ```python
 # Group the dataframe by year
 grouped_df = merged_df.groupby("Year")
@@ -135,7 +135,7 @@ summary_df["Tot_Dschrgs"] = summary_df["Tot_Dschrgs"].astype(float).map("{:,}".f
 
 # Print the summary statistics
 summary_df
-```
+```  
 Which results in the following table:  
 ![SummaryTable1](Images/SummaryTable1.PNG)  
 
@@ -167,7 +167,7 @@ plt.show()
 ```  
 Graphed out, there appears to be a decreasing trend in the total number of discharges between 2017 and 2021:  
 ![line_graph_discharges](Images/line_graph_discharges.png)  
-The code for showing the Average Total Amount and Average Medicare Amount:
+The code for showing the Average Total Amount and Average Medicare Amount:  
 ```python
 import matplotlib.pyplot as plt
 
@@ -189,7 +189,7 @@ plt.tight_layout()
 # Show the bar graph
 plt.show()
 ```  
-And while the total number of discharges appears to be going down over the years, the Average Amount (Total and Medicare) have been steadily increasing: 
+And while the total number of discharges appears to be going down over the years, the Average Payment Amounts (Total and Medicare) have been steadily increasing: 
 ![line_graph_payment_amounts](Images/line_graph_payment_amounts.png)   
 
 There appears to be a close correlation between Average Total Payment Amount and Average Medicare Payment Amount. If these two are closely correlated, it may be best to drop one from further analyses, for parsimony. Let's plot the two variables in a scatterplot first, then calculate the Pearson correlation coefficient to determine what the precise relationship is.  
@@ -293,7 +293,7 @@ This model predicts the Highest Average Payment Amount in 2022 to be **$512,001.
 What does a standard linear regression equation predict? Here is the code:  
 ```python
 import pandas as pd
-from sklearn.linear_model import LinearRegression
+from scipy.stats import LinearRegression
 
 # Define the table data
 data = {
