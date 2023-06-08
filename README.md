@@ -17,7 +17,7 @@ The Centers for Medicare and Medicaid Services (CMS) extensively tracks a variet
 ### Statement of Business Task:  
 - This is an exploratory analysis investigating what providers, diagnosis-related groupings, and whether discharges are associated with payments and coverage. Although CMS tracks costs across a variety of stages and areas of care, this case study focuses on just inpatient costs.  
 
-The Research Questions are: 
+The Research Questions are:  
     -  **What trends are there for Medicare Inpatient payments and discharges over the last five years (2017-2021) as represented in the CMS data?**  
     -  **What factors captured in the data may account for higher payments (charges)?**  
 - Key factors have been established in the literature on medical costs that point to especially good prospects in the dataset to investigate, thus giving clearer direction on what to focus on:
